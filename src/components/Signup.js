@@ -1,10 +1,15 @@
 import React from 'react';
 import './Signup.css';
 import {Container, Grid, Item} from '@mui/material';
-import p1 from '../assets/p1.jpg'
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+import p1 from '../assets/p1.jpg';
+import logo from '../assets/logo.png';
 
 const axios = require('axios');
 const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://localhost:8000';
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 class Signup extends React.Component {
     constructor(props){
@@ -70,37 +75,30 @@ class Signup extends React.Component {
     render(){
         return(
             <Container className="formContainer">
-                <Grid container spacing={3}>
+                <Grid container spacing={3} className="formContainerGrid">
                     <Grid item xs>
                         <div className='authWrapper'>
-                            <h2>Ready to get more done</h2>
-                            <h6>Create an account to begin</h6>
+                            <div className='authHead'>
+                                <div class="authHeadLogo">
+                                    <img src={logo} alt=""/>
+                                </div>
+                                <h2>Ready to get more done</h2>
+                                <p>Create an account to begin</p>
+                            </div>
                             <form>
-                                <label htmlFor='email'>
-                                    Your email
-                                    <input id='email' className={this.state.emailErrors ? 'fieldError' : ''} name='email' placeholder='jane.doe@email.com' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
-                                    <span className='formErrors'>{this.state.emailErrors}</span>
-                                </label>
+                                <input id='email' className={this.state.emailErrors ? 'fieldError' : ''} name='email' placeholder='jane.doe@email.com' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
+                                <span className='formErrors'>{this.state.emailErrors}</span>
                                 <div className="fullNames">
-                                    <label htmlFor='firstname'>
-                                        Your firstname
+                                    <div className="fields">
                                         <input id='firstname' className={this.state.fullNameErrors ? 'fieldError' : ''} name='firstname' placeholder='Firstname' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
-                                    </label>
-                                    <label htmlFor='lastname'>
-                                        Your lastname
+                                        <span style={{width:'10px'}}></span>
                                         <input id='lastname' className={this.state.fullNameErrors ? 'fieldError' : ''} name='lastname' placeholder='Lastname' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
-                                    </label>
+                                    </div>
                                     <span className='formErrors'>{this.state.fullNameErrors}</span>
                                 </div>
                                 <div className='passwordField'>
-                                    <label htmlFor='password1'>
-                                        Enter password
-                                        <input id='password1' className={this.state.passwordErrors ? 'fieldError' : ''} name='password1' placeholder='Enter your password' onChange={(e)=> this.handleChange({password1:e.target.value})} required></input>
-                                    </label>
-                                    <label htmlFor='password2'>
-                                        Confirm password
-                                        <input id='password2' className={this.state.passwordErrors ? 'fieldError' : ''} name='password2' placeholder='Confirm your password' onChange={(e)=> this.handleChange({password2:e.target.value})} required></input>
-                                    </label>
+                                    <input id='password1' className={this.state.passwordErrors ? 'fieldError' : ''} name='password1' placeholder='Enter your password' onChange={(e)=> this.handleChange({password1:e.target.value})} required></input>
+                                    <input id='password2' className={this.state.passwordErrors ? 'fieldError' : ''} name='password2' placeholder='Confirm your password' onChange={(e)=> this.handleChange({password2:e.target.value})} required></input>
                                     <span className='formErrors'>{this.state.passwordErrors}</span>
                                 </div>
                                 <span className='formErrors'>{this.state.authErrors}</span>
@@ -109,7 +107,29 @@ class Signup extends React.Component {
                         </div>
                     </Grid>
                     <Grid item xs={6}>
-
+                        <AutoPlaySwipeableViews className="slideView">
+                            <div className='slideBody'>
+                                <img src={p1} alt=''/>
+                                <div className='text'>
+                                    <h6>Lorem Ipsum</h6>
+                                    <p>A short description goes here</p>
+                                </div>
+                            </div>
+                            <div className='slideBody'>
+                                <img src={p1} alt=''/>
+                                <div className='text'>
+                                    <h6>Lorem Ipsum</h6>
+                                    <p>A short description goes here</p>
+                                </div>
+                            </div>
+                            <div className='slideBody'>
+                                <img src={p1} alt=''/>
+                                <div className='text'>
+                                    <h6>Lorem Ipsum</h6>
+                                    <p>A short description goes here</p>
+                                </div>
+                            </div>
+                        </AutoPlaySwipeableViews>
                     </Grid>
                 </Grid>
             </Container>

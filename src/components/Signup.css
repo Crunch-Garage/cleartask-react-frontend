@@ -1,11 +1,46 @@
 .formContainer{
     padding:15px;
     display: flex;
-    height:calc(100vh - 45px);
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    margin:0;
+}
+
+.formContainerGrid{
+    height:100vh;
 }
 
 .formContainer .authWrapper{
-    max-width: 500px;
+    max-width: 350px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.authWrapper .authHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authWrapper .authHead .authHeadLogo{
+    margin-bottom:20px;
+}
+
+.authWrapper .authHead .authHeadLogo img{
+    width:100px;
+    height:auto;
+}
+
+.authWrapper .authHead h2{
+    font-size: 25px;
+    margin:0;
+    margin-bottom: 10px;
+}
+
+.authWrapper .authHead p{
+    font-size: 12px;
+    margin: 0;
 }
 
 .formContainer .authCarousel{
@@ -15,24 +50,41 @@
 .formContainer form{
     display: flex;
     flex-direction: column;
-
-}
-
-.formContainer form label{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
+    margin-top: 25px;
 }
 
 .formContainer form input{
     height:45px;
-    width:100%;
+    width: 100%;
     border:none;
     border-radius:3px;
-    background:rgb(43 162 202 / 5%);;
+    background:rgb(43 162 202 / 10%);;
     padding: 0 10px;
     box-sizing: border-box;
+    margin:5px 0px;
+}
+
+.formContainer form .fullNames{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.formContainer form .fullNames .fields {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.formContainer form button{
+    height:45px;
+    border-radius: 5px;
+    background-color: #cc0000;
+    border:none;
+    color:#fff;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 .formContainer form input.fieldError{
@@ -41,5 +93,43 @@
 
 .formContainer .formErrors{
     color:#f10000;
-    font-size: 13px;
+    font-size: 11px;
+    text-align: start;
+}
+
+.slideView{
+    border-radius:15px;
+    height:calc(100vh - 65px);
+    background: #cc0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.slideBody{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideBody .text {
+    padding:15px;
+    color:#fff;
+}
+
+.slideBody img {
+    width:250px;
+    height:250px;
+    object-fit: cover;
+}
+
+.slideBody .text  h6{
+    font-size: 20px;
+    margin:0;
+}
+
+.slideBody .text  p{
+    margin:0;
+    font-size:13px;
 }
