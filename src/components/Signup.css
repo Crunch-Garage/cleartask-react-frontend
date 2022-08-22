@@ -1,0 +1,45 @@
+.formContainer{
+    padding:15px;
+    display: flex;
+    height:calc(100vh - 45px);
+}
+
+.formContainer .authWrapper{
+    max-width: 500px;
+}
+
+.formContainer .authCarousel{
+    max-width: 500px !important;
+}
+
+.formContainer form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formContainer form label{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.formContainer form input{
+    height:45px;
+    width:100%;
+    border:none;
+    border-radius:3px;
+    background:rgb(43 162 202 / 5%);;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.formContainer form input.fieldError{
+    border:1px solid #f10000;
+}
+
+.formContainer .formErrors{
+    color:#f10000;
+    font-size: 13px;
+}
