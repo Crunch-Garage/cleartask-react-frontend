@@ -37,9 +37,10 @@ class Signup extends React.Component {
     // Form fields processing a user inputs their details.
     handleChange(object){
         // Update state as form field values change
-        this.setState(object,()=>console.log(this.state))
-
-        // TO DO: Check if username already exists
+        this.setState(object,()=> {
+            // TO DO: Check if username already exists and generate a new random one 
+            this.setState({username:this.state.email.substring(0, this.state.email.lastIndexOf("@"))}, () => console.log(this.state.username))
+        });
     };
 
     create(e){
@@ -47,24 +48,25 @@ class Signup extends React.Component {
         this.state.email && this.state.firstname && this.state.lastname ? (
             this.state.email ? (
                 this.state.firstname && this.state.lastname ? (
-                    axios({
-                        method:'post',
-                        url:`${baseURL}/apis/rest-auth/registration/`,
-                        data: {
-                            username:this.state.username,
-                            firstname:this.state.firstname,
-                            lastname:this.state.lastname,
-                            password1:this.state.password1,
-                            password2:this.state.password2,
-                            email:this.state.email
-                        }
-                    })
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(error =>{
-                        console.log(error);
-                    })
+                    // axios({
+                    //     method:'post',
+                    //     url:`${baseURL}/apis/rest-auth/registration/`,
+                    //     data: {
+                    //         username: this.state.username,
+                    //         firstname:this.state.firstname,
+                    //         lastname:this.state.lastname,
+                    //         password1:this.state.password1,
+                    //         password2:this.state.password2,
+                    //         email:this.state.email
+                    //     }
+                    // })
+                    // .then(response => {
+                    //     console.log(response);
+                    // })
+                    // .catch(error =>{
+                    //     console.log(error);
+                    // })
+                    console.log(this.state.username)
 
                 ) : this.setState({fullNameErrors:"Please enter your first and last name"})
 
