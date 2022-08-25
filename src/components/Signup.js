@@ -35,14 +35,14 @@ class Signup extends React.Component {
     // }
 
     // Form fields processing a user inputs their details.
-    handleChange = (object) =>{
+    handleChange(object){
         // Update state as form field values change
         this.setState(object,()=>console.log(this.state))
 
         // TO DO: Check if username already exists
     };
 
-    create = (e) =>{
+    create(e){
         e.preventDefault();
         this.state.email && this.state.firstname && this.state.lastname ? (
             this.state.email ? (
