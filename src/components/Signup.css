@@ -97,6 +97,24 @@
     text-align: start;
 }
 
+.formContainer .formErrors.AuthError{
+    margin:10px 0;
+    border: 1px solid #f10000;
+    background: rgb(204 0 0 / 20%);
+    padding: 20px 10px;
+    border-radius: 3px;
+}
+
+.formContainer .formFooter{
+    margin:15px 0 ;
+}
+
+.formContainer .formFooter p{
+    font-size:12px;
+    margin:0;
+    text-align: center;
+}
+
 .slideView{
     border-radius:15px;
     height:calc(100vh - 65px);
