@@ -3,6 +3,7 @@ import './Signup.css';
 import {Container, Grid} from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import { Link } from "react-router-dom";
 import p1 from '../assets/p1.jpg';
 import logo from '../assets/logo.png';
 
@@ -97,6 +98,7 @@ class Signup extends React.Component {
                                 <p>Create an account to begin</p>
                             </div>
                             <form onSubmit={this.registerUser}>
+                            <span className={this.state.authErrors ? 'formErrors AuthError' : ''}>{this.state.authErrors}</span>
                                 <input id='email' className={this.state.emailErrors ? 'fieldError' : ''} name='email' placeholder='jane.doe@email.com' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
                                 <span className='formErrors'>{this.state.emailErrors}</span>
                                 <div className="fullNames">
@@ -112,8 +114,10 @@ class Signup extends React.Component {
                                     <input id='password2' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password2' placeholder='Confirm your password' onChange={(e)=> this.handleChange({password2:e.target.value})} required></input>
                                     <span className='formErrors'>{this.state.passwordErrors}</span>
                                 </div>
-                                <span className='formErrors'>{this.state.authErrors}</span>
                                 <button type='submit'>Sign up</button>
+                                <div className="formFooter">
+                                    <p>Already have an account? <Link to="/login">Login instead.</Link></p>
+                                </div>
                             </form>
                         </div>
                     </Grid>
