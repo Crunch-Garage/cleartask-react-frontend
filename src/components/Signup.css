@@ -67,7 +67,7 @@
 .formContainer form .fullNames{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .formContainer form .fullNames .fields {
