@@ -57,6 +57,9 @@ class Login extends React.Component {
                     localStorage.setItem("access_token", response.data.access);
                     // we will use the refresh token to get a new access token from the server when the initial one nears expiry
                     localStorage.setItem("refresh_token", response.data.refresh);
+                    
+                    // redirect user to their dashboard
+                    this.props.history.go("/workspace");
                 })
                 .catch(error =>{
                     error.response.status == '401' ? (
