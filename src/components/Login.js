@@ -8,7 +8,7 @@ import p1 from '../assets/p1.jpg';
 import logo from '../assets/logo.png';
 
 const axios = require('axios');
-const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8000';
+const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8080';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
