@@ -1,8 +1,9 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Navigate, Route } from "react-router-dom";
 
 // component that handles where to take authenticated users
 const AuthedRoute = ({ component: Component, loading, ...rest }) => {
+    // TO DO: check if token is about to expire
   const isAuthed = Boolean(localStorage.getItem("access_token"));
   return (
     <Route
@@ -13,7 +14,7 @@ const AuthedRoute = ({ component: Component, loading, ...rest }) => {
         ) : !isAuthed ? (
           <Component history={props.history} {...rest} />
         ) : (
-          <Redirect
+          <Navigate
             to={{
               pathname: "/login",
             }}
