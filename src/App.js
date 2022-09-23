@@ -2,8 +2,10 @@ import './App.css';
 import Header from './components/Header';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Workspace from './components/Workspace';
+import Workspace from './components/dashboard/Workspace';
 import AuthedRoute from './components/AuthedRoute';
+import UnauthedRoute from './components/UnauthedRoute';
+import Home from './components/Home';
 
 import {
   BrowserRouter,
@@ -12,17 +14,25 @@ import {
 } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} exact/>
-          <Route path="/signup" element={<Signup/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/workspace" element={<Workspace/>}/>
+          <Route path='/' element={<Home/>}/>
+
+          {/* If not authenticated */}
+          <Route element={<UnauthedRoute/>}>
+            <Route path="/auth/signup" element={<Signup/>}/>
+            <Route path="/auth/login" element={<Login/>}/>
+          </Route>
+          {/* If authenticated */}
+          <Route element={<AuthedRoute />}>
+            <Route path="/dashboard/workspace" element={<Workspace/>}/>
+          </Route>
         </Routes>
       </BrowserRouter>
-      
+    
     </div>
   );
 }

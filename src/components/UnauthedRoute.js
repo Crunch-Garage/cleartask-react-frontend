@@ -5,11 +5,11 @@ import { Navigate, Outlet } from "react-router-dom";
 
 // const isAuthed = Boolean(localStorage.getItem("access_token"));
 
-class AuthedRoute extends React.Component {
+class UnauthedRoute extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      loggedIn:true
+      loggedOut:false
     }
   }
 
@@ -20,10 +20,10 @@ class AuthedRoute extends React.Component {
   render(){
     return(
       <div>
-        { this.state.loggedIn ? (
+        { this.state.loggedOut ? (
             <Outlet/>
             ) : (
-            <Navigate to='/auth/login' replace={true}/>
+            <Navigate to='/dashboard/workspace' replace={true}/>
             )
         }
       </div>
@@ -31,4 +31,5 @@ class AuthedRoute extends React.Component {
   };
 }
 
-export default AuthedRoute;
+
+export default UnauthedRoute;
