@@ -1,28 +1,34 @@
 import React from "react";
-import { Navigate, Route } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 // component that handles where to take authenticated users
-const AuthedRoute = ({ component: Component, loading, ...rest }) => {
-    // TO DO: check if token is about to expire
-  const isAuthed = Boolean(localStorage.getItem("access_token"));
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        loading ? (
-          <p>Loading...</p>
-        ) : !isAuthed ? (
-          <Component history={props.history} {...rest} />
-        ) : (
-          <Navigate
-            to={{
-              pathname: "/login",
-            }}
-          />
-        )
-      }
-    />
-  );
-};
+
+// const isAuthed = Boolean(localStorage.getItem("access_token"));
+
+class AuthedRoute extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      loggedIn:true
+    }
+  }
+
+  componentDidMount = () =>{
+    console.log('here')
+  }
+
+  render(){
+    return(
+      <div>
+        { this.state.loggedIn ? (
+            <Outlet/>
+            ) : (
+            <Navigate to='/auth/login' replace={true}/>
+            )
+        }
+      </div>
+    )
+  };
+}
 
 export default AuthedRoute;
