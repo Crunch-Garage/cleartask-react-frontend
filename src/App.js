@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Workspace from './components/dashboard/Workspace';
 import AuthedRoute from './components/AuthedRoute';
 import UnauthedRoute from './components/UnauthedRoute';
+import Home from './components/Home';
 
 import {
   BrowserRouter,
@@ -13,24 +14,25 @@ import {
 } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
-          <Routes>
-              {/* no authentication required to access */}
-              <Route path="/" element={<App />} exact/>
-              {/* Only accessible if not authenticated */}
-              <Route path="/auth" element={<UnauthedRoute/>} exact>
-                <Route path="/auth/signup" element={<Signup/>}/>
-                <Route path="/auth/login" element={<Login/>}/>
-              </Route>
-              {/* Requires user to be authenticated */}
-              <Route path="/dashboard" element={<AuthedRoute />} exact>
-                <Route path="/dashboard/workspace" element={<Workspace/>}/>
-              </Route>
-          </Routes>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+
+          {/* If not authenticated */}
+          <Route element={<UnauthedRoute/>}>
+            <Route path="/auth/signup" element={<Signup/>}/>
+            <Route path="/auth/login" element={<Login/>}/>
+          </Route>
+          {/* If authenticated */}
+          <Route element={<AuthedRoute />}>
+            <Route path="/dashboard/workspace" element={<Workspace/>}/>
+          </Route>
+        </Routes>
       </BrowserRouter>
-      
+    
     </div>
   );
 }
