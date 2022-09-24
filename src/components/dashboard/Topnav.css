@@ -19,15 +19,26 @@
     display: flex;
     align-items: center;
     background-color: #F3F7FA;
-    padding: 0.1rem 0.7rem;
+    padding: 0.3rem 0.7rem;
     width: fit-content;
     border-radius: 3px;
+    min-width:250px;
 }
 
 .dashtopNav .searchbar input{
     height:1.5rem;
     background:none;
     border:none;
+    width: 100%;
+}
+
+.dashtopNav .searchbar input ~ .topNavIcon:hover{
+    cursor: pointer;
+    color:#E63462;
+}
+
+.dashtopNav .searchbar input:focus{
+    outline: none !important;
 }
 
 .dashtopNav .dashtopNavGridItem .topNavIcon{
