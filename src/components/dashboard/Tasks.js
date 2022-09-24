@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from './Sidebar';
+import Topnav from './Topnav';
 
 class Tasks extends React.Component {
     constructor(props){
@@ -19,10 +20,15 @@ class Tasks extends React.Component {
                 <div className="dashSidebar"> 
                     <Sidebar/>
                 </div>
-                <div className="dashContent">
-                    <p>My Tasks</p>
+                <div className='dashContentContainer'>
+                    <div>
+                        <Topnav/>
+                    </div>
+                    <div className="dashContent">
+                        <p>My Tasks</p>
+                    </div>
                 </div>
-            </div>       
+            </div>      
         )
     }
 }
