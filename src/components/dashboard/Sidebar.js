@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import './Sidebar.css';
+import { Icon } from '@iconify/react';
 
 // This styling will be applied to a <NavLink> when the
 // route that it links to is currently selected.
@@ -25,12 +26,13 @@ class Sidebar extends React.Component{
                 <nav>
                     <ul>
                         <li>
-                        <NavLink
+                        <NavLink 
                             to="/dashboard/workspace"
                             style={({ isActive }) =>
                             isActive ? activeStyle : undefined
                             }
                         >
+                            <Icon icon="mdi-light:view-dashboard" />
                             Workspace
                         </NavLink>
                         </li>
@@ -41,6 +43,7 @@ class Sidebar extends React.Component{
                             isActive ? activeClassName : undefined
                             }
                         >
+                            <Icon icon="mdi-light:email-open" />
                             Inbox
                         </NavLink>
                         </li>
@@ -52,6 +55,7 @@ class Sidebar extends React.Component{
                                 isActive ? activeClassName : undefined
                                 }
                             >
+                                <Icon icon="mdi-light:bell" />
                                 Notifications
                             </span>
                             )}
@@ -65,6 +69,7 @@ class Sidebar extends React.Component{
                                 isActive ? activeClassName : undefined
                                 }
                             >
+                                <Icon icon="mdi-light:account" />
                                 Profile
                             </span>
                             )}
@@ -78,6 +83,7 @@ class Sidebar extends React.Component{
                                 isActive ? activeClassName : undefined
                                 }
                             >
+                                <Icon icon="mdi-light:folder-multiple" />
                                 Projects
                             </span>
                             )}
@@ -91,6 +97,7 @@ class Sidebar extends React.Component{
                                 isActive ? activeClassName : undefined
                                 }
                             >
+                                <Icon icon="mdi-light:cog" />
                                 Settings
                             </span>
                             )}
@@ -104,6 +111,7 @@ class Sidebar extends React.Component{
                                 isActive ? activeClassName : undefined
                                 }
                             >
+                                <Icon icon="mdi-light:sitemap" />
                                 Tasks
                             </span>
                             )}
