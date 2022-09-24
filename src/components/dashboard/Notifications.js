@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Sidebar from './Sidebar';
 
 class Notifications extends React.Component {
     constructor(props){
@@ -15,7 +15,14 @@ class Notifications extends React.Component {
     
     render(){
         return(
-            <p>Notifications</p>
+            <div className="dashboardContainer">
+                <div className="dashSidebar"> 
+                    <Sidebar/>
+                </div>
+                <div className="dashContent">
+                    <p>My Notifications</p>
+                </div>
+            </div>
         )
     }
 }
