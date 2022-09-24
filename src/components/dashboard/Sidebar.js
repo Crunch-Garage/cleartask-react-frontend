@@ -27,94 +27,86 @@ class Sidebar extends React.Component{
                     <ul>
                         <li>
                         <NavLink 
+                            className="sideLink"
                             to="/dashboard/workspace"
                             style={({ isActive }) =>
                             isActive ? activeStyle : undefined
                             }
                         >
-                            <Icon icon="mdi-light:view-dashboard" />
+                            <Icon className="sideNavIcon" icon="mdi-light:view-dashboard" />
                             Workspace
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink
+                        <NavLink 
+                            className="sideLink"
                             to="/dashboard/inbox"
-                            className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
                             }
                         >
-                            <Icon icon="mdi-light:email-open" />
+                            <Icon className="sideNavIcon" icon="mdi-light:email-open" />
                             Inbox
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/notifications">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                <Icon icon="mdi-light:bell" />
-                                Notifications
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/notifications"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:bell" />
+                            Notifications
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/profile">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                <Icon icon="mdi-light:account" />
-                                Profile
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/profile"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:account" />
+                            Profile
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/projects">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                <Icon icon="mdi-light:folder-multiple" />
-                                Projects
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/projects"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:folder-multiple" />
+                            Projects
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/settings">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                <Icon icon="mdi-light:cog" />
-                                Settings
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/settings"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:cog" />
+                            Settings
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/tasks">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                <Icon icon="mdi-light:sitemap" />
-                                Tasks
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/tasks"
+                            style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                            }
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:sitemap" />
+                            Tasks
                         </NavLink>
                         </li>
                     </ul>
