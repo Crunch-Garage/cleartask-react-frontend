@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Sidebar from './Sidebar';
 
 class Tasks extends React.Component {
     constructor(props){
@@ -15,7 +15,14 @@ class Tasks extends React.Component {
     
     render(){
         return(
-            <p>Tasks</p>
+            <div className="dashboardContainer">
+                <div className="dashSidebar"> 
+                    <Sidebar/>
+                </div>
+                <div className="dashContent">
+                    <p>My Tasks</p>
+                </div>
+            </div>       
         )
     }
 }
