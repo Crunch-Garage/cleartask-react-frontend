@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from './Sidebar';
+import Topnav from './Topnav';
 import "./Styles.css";
 
 class Workspace extends React.Component {
@@ -20,8 +21,13 @@ class Workspace extends React.Component {
                 <div className="dashSidebar"> 
                     <Sidebar/>
                 </div>
-                <div className="dashContent">
-                    <p>My workspace</p>
+                <div className='dashContentContainer'>
+                    <div>
+                        <Topnav/>
+                    </div>
+                    <div className="dashContent">
+                        <p>My workspace</p>
+                    </div>
                 </div>
             </div>
           
