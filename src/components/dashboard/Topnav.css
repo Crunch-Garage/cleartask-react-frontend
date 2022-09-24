@@ -30,6 +30,10 @@
     border:none;
 }
 
+.dashtopNav .searchbar input:focus{
+    outline: none !important;
+}
+
 .dashtopNav .dashtopNavGridItem .topNavIcon{
     font-size: 24px;
 }
