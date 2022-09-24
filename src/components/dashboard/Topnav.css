@@ -32,6 +32,11 @@
     width: 100%;
 }
 
+.dashtopNav .searchbar input ~ .topNavIcon:hover{
+    cursor: pointer;
+    color:#E63462;
+}
+
 .dashtopNav .searchbar input:focus{
     outline: none !important;
 }
