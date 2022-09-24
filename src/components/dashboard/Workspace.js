@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Sidebar from './Sidebar';
+import Topnav from './Topnav';
+import "./Styles.css";
 
 class Workspace extends React.Component {
     constructor(props){
@@ -12,10 +14,23 @@ class Workspace extends React.Component {
     componentDidMount = () => {
         console.log('workspace')
     }
-    
+
     render(){
         return(
-            <p>My workspace</p>
+            <div className="dashboardContainer">
+                <div className="dashSidebar"> 
+                    <Sidebar/>
+                </div>
+                <div className='dashContentContainer'>
+                    <div>
+                        <Topnav/>
+                    </div>
+                    <div className="dashContent">
+                        <p>My workspace</p>
+                    </div>
+                </div>
+            </div>
+          
         )
     }
 }

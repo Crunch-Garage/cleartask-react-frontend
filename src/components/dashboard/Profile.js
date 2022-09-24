@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Sidebar from './Sidebar';
+import Topnav from './Topnav';
 
 class Profile extends React.Component {
     constructor(props){
@@ -15,7 +16,19 @@ class Profile extends React.Component {
     
     render(){
         return(
-            <p>Profile</p>
+            <div className="dashboardContainer">
+                <div className="dashSidebar"> 
+                    <Sidebar/>
+                </div>
+                <div className='dashContentContainer'>
+                    <div>
+                        <Topnav/>
+                    </div>
+                    <div className="dashContent">
+                        <p>My Profile</p>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

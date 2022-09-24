@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Sidebar from './Sidebar';
+import Topnav from './Topnav';
 
 class Inbox extends React.Component {
     constructor(props){
@@ -15,7 +16,19 @@ class Inbox extends React.Component {
     
     render(){
         return(
-            <p>Inbox</p>
+            <div className="dashboardContainer">
+                <div className="dashSidebar"> 
+                    <Sidebar/>
+                </div>
+                <div className='dashContentContainer'>
+                    <div>
+                        <Topnav/>
+                    </div>
+                    <div className="dashContent">
+                        <p>My inbox</p>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

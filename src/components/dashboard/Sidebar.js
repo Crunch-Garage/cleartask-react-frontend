@@ -1,15 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import './Sidebar.css';
-
-// This styling will be applied to a <NavLink> when the
-// route that it links to is currently selected.
-let activeStyle = {
-    textDecoration: "underline",
-};
-
-let activeClassName = "underline";
-
+import { Icon } from '@iconify/react';
 
 class Sidebar extends React.Component{
     constructor(props){
@@ -25,88 +17,66 @@ class Sidebar extends React.Component{
                 <nav>
                     <ul>
                         <li>
-                        <NavLink
+                        <NavLink 
+                            className="sideLink"
                             to="/dashboard/workspace"
-                            style={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                            }
                         >
+                            <Icon className="sideNavIcon" icon="mdi-light:view-dashboard" />
                             Workspace
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink
+                        <NavLink 
+                            className="sideLink"
                             to="/dashboard/inbox"
-                            className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
-                            }
                         >
+                            <Icon className="sideNavIcon" icon="mdi-light:email-open" />
                             Inbox
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/notifications">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                Notifications
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/notifications"
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:bell" />
+                            Notifications
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/profile">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                Profile
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/profile"
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:account" />
+                            Profile
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/projects">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                Projects
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/projects"
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:folder-multiple" />
+                            Projects
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/settings">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                Settings
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/settings"
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:cog" />
+                            Settings
                         </NavLink>
                         </li>
                         <li>
-                        <NavLink to="/dashboard/tasks">
-                            {({ isActive }) => (
-                            <span
-                                className={
-                                isActive ? activeClassName : undefined
-                                }
-                            >
-                                Tasks
-                            </span>
-                            )}
+                        <NavLink 
+                            className="sideLink"
+                            to="/dashboard/tasks"
+                        >
+                            <Icon className="sideNavIcon" icon="mdi-light:sitemap" />
+                            Tasks
                         </NavLink>
                         </li>
                     </ul>

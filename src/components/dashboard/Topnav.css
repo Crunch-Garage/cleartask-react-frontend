@@ -1,0 +1,45 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+.dashtopNav{
+    background-color: #ffffff;
+    height:55px;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.dashtopNavGridItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0 !important; */
+}
+.dashtopNav .searchbar{
+    display: flex;
+    align-items: center;
+    background-color: #F3F7FA;
+    padding: 0.1rem 0.7rem;
+    width: fit-content;
+    border-radius: 3px;
+}
+
+.dashtopNav .searchbar input{
+    height:1.5rem;
+    background:none;
+    border:none;
+}
+
+.dashtopNav .dashtopNavGridItem .topNavIcon{
+    font-size: 24px;
+}
+
+.accountPrev{
+    display: flex;
+    align-items: center;
+}
+
+.accountPrev .avatar{
+    width: 25px;
+    height: 25px;
+}
