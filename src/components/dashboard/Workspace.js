@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Topnav from './Topnav';
 import "./Styles.css";
+import "./Workspace.css";
 import {Container, Grid, Card, CardContent} from '@mui/material';
 import { Icon } from '@iconify/react';
 
@@ -24,7 +25,7 @@ const card = (
 
             </div>
             <div className='right'>
-                <h5>Tasks Completed</h5>
+                <h5><span>10+</span>more</h5>
                 <p>from last week</p>
             </div>
         </div>
