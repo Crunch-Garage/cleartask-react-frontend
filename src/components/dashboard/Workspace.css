@@ -1,5 +1,6 @@
 .dashCCard{
-    border-radius: 15px;
+    border-radius: 10px !important;
+    box-shadow: none !important;
 }
 
 .dashCCard .top{
