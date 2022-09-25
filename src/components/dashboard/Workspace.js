@@ -72,13 +72,13 @@ class Workspace extends React.Component {
                         <Container className="dashCContainer">
                             <Grid container spacing={3} className="dashCgrid">
                                 <Grid item xs={3} className="dashCGridItem">
-                                    <Card className="dashCCard" variant="outlined">{card}</Card>
+                                    <Card className="dashCCard">{card}</Card>
                                 </Grid>
                                 <Grid item xs={3} className="dashCGridItem">
-                                    <Card className="dashCCard" variant="outlined">{card}</Card>
+                                    <Card className="dashCCard">{card}</Card>
                                 </Grid>
                                 <Grid item xs={3} className="dashCGridItem">
-                                    <Card className="dashCCard" variant="outlined">{card}</Card>
+                                    <Card className="dashCCard">{card}</Card>
                                 </Grid>
                             </Grid>
                         </Container>
