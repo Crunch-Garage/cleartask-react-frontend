@@ -5,6 +5,7 @@ import "./Styles.css";
 import "./Workspace.css";
 import {Container, Grid, Card, CardContent} from '@mui/material';
 import { Icon } from '@iconify/react';
+import Trend from 'react-trend';
 
 
 const card = (
@@ -22,7 +23,17 @@ const card = (
         <div className="dvdr"></div>
         <div className='middle'>
             <div className='left'>
-
+                <Trend
+                data={[0, 10, 75, 6, 6, 101]}
+                gradient={['#0FF', '#F0F', '#FF0']} 
+                smooth
+                height={200}
+                radius={20} 
+                strokeWidth={6}
+                autoDraw
+                autoDrawDuration={3000}
+                autoDrawEasing="ease-in"
+                />
             </div>
             <div className='right'>
                 <h5><span>10+</span>more</h5>
