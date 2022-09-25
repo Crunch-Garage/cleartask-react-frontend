@@ -18,9 +18,11 @@
 .dashtopNav .searchbar{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #F3F7FA;
     padding: 0.3rem 0.7rem;
-    width: fit-content;
+    width: auto;
+    height:35px;
     border-radius: 3px;
     min-width:250px;
 }
@@ -30,6 +32,8 @@
     background:none;
     border:none;
     width: 100%;
+    transition: width 0.2s ease-in-out;
+    transition-delay: 0s;
 }
 
 .dashtopNav .searchbar input ~ .topNavIcon:hover{
@@ -37,12 +41,15 @@
     color:#E63462;
 }
 
-.dashtopNav .searchbar input:focus{
+.dashtopNav .searchbar input:focus,
+.dashtopNav .searchbar input:hover{
     outline: none !important;
+    width:300px;
 }
 
 .dashtopNav .dashtopNavGridItem .topNavIcon{
     font-size: 24px;
+    color:#94A2BC;
 }
 
 .accountPrev{
