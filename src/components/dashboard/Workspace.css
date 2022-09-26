@@ -80,3 +80,19 @@
     font-weight: 500;
     color: #299702;
 }
+
+.tasksDoneChart .top h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tasksDoneChart .top .chartDataControls{
+    display: flex;
+    gap: 5px;
+}
+
+.tasksDoneChart .top .chartDataControls button{
+    font-size: 15px;
+    background: none;
+    border:none;
+}
