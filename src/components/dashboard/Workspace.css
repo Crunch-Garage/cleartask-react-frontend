@@ -82,7 +82,7 @@
 }
 
 .tasksDoneChart .top h3{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
 }
 
@@ -90,6 +90,7 @@
     display: flex;
     gap: 5px;
 }
+
 
 .tasksDoneChart .top .chartDataControls button{
     font-size: 15px;
