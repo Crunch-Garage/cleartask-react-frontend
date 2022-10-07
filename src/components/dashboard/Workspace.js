@@ -99,7 +99,7 @@ const chart = (
                     <div className='chartDataControls'>
                         <button type='button'>Daily</button>
                         <button type='button'>Weekly</button>
-                        <button type='button'>MOnthly</button>
+                        <button type='button'>Monthly</button>
                     </div>
                 </div>
                 <LineChart width={730} height={250} data={data}
