@@ -17,7 +17,7 @@ class Home extends React.Component {
                     <p>Clear more tasks off your to do list. Get more work done! It's that simple. </p>
 
                     <div className="QuickLinks">
-                        <a href="/dashboard/workspace/"><button type="button">My clear board</button></a>
+                        <a href="/dashboard/workspace/"><button type="button">Go to my clearboard</button></a>
                     </div>
                 </div>
             </div>
