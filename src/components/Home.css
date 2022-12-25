@@ -1,6 +1,4 @@
-@import "../global/Colors.css";
-@import "../global/Sizes.css";
-@import "../global/Fonts.css";
+@import "../global/Imports.css";
 
 .homePage{
     display:flex;
@@ -19,7 +17,7 @@
 }
 
 .homePage .contBox h2{
-    font-size:var(--secondary-header-font-size);
+    font-size:var(--primary-header-font-size);
 }
 
 .QuickLinks button{
