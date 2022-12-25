@@ -13,6 +13,8 @@ import AuthedRoute from './components/AuthedRoute';
 import UnauthedRoute from './components/UnauthedRoute';
 import Home from './components/Home';
 import Sidebar from './components/dashboard/Sidebar';
+import PageNotFound from "./components/PageNotFound";
+
 import {
   BrowserRouter,
   Routes,
@@ -26,7 +28,8 @@ function App() {
       <BrowserRouter>
           <Routes>
               <Route path='/' element={<Home/>}/>
-
+              {/* any other route not defined redirect to 404 page */}
+              <Route path='*' element={<PageNotFound/>}/>
               {/* If not authenticated */}
               <Route element={<UnauthedRoute/>}>
                 <Route path="/auth/signup" element={<Signup/>}/>
