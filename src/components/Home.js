@@ -11,12 +11,15 @@ class Home extends React.Component {
 
     render(){
         return(
-            <div>
-            <p>Homepage</p>
+            <div className="homePage">
+                <div className="contBox">
+                    <h2>Welcome to Cleartask</h2>
+                    <p>Clear more tasks off your to do list. Get more work done! It's that simple. </p>
 
-            <div className="QuickLinks">
-                <a href="/dashboard/workspace/"><button type="button">My dashboard</button></a>
-            </div>
+                    <div className="QuickLinks">
+                        <a href="/dashboard/workspace/"><button type="button">My clear board</button></a>
+                    </div>
+                </div>
             </div>
         )
     }
