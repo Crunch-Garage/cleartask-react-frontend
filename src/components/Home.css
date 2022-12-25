@@ -1,0 +1,5 @@
+@import "../global/colors.css";
+
+.QuickLinks button{
+    background-color: var(--primary-button-color);
+}
