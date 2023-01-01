@@ -2,82 +2,135 @@ import React from "react";
 import './Header.css';
 import logo from '../assets/solid.png';
 
-const Header = ()=>(
-    <>
-        <nav className="w-full fixed border-b border-black" >
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                    <div className="relative flex h-16 items-center justify-between">
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        {/* <!-- Mobile menu button--> */}
-                        <button type="button" className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                            <span className="sr-only">Open main menu</span>
-                            <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex flex-shrink-0 items-center">
-                            <img className="hidden h-8 w-auto lg:block" src={logo} alt="Cleartask"/>
+function Header(){
+    const [dropdown, setDropdown] = React.useState({
+        drop1:"hidden",
+        drop2:"hidden",
+        drop3:"hidden",
+        drop4:"hidden"
+    })
+
+    const onMenuItemMouseIn = (e) =>{
+        let arrayCopy = Object.assign({}, dropdown);
+        arrayCopy[e.target.getAttribute("data-targetItem")]= "block"
+        setDropdown(arrayCopy)
+    }
+
+    const onMenuItemMouseOut = (e) =>{
+        setDropdown({
+            drop1:"hidden",
+            drop2:"hidden",
+            drop3:"hidden",
+            drop4:"hidden"
+        })
+    }
+    
+    return(
+        <>
+            <nav className="navbar" >
+                <div className="nav-menu-desktop">
+                    <div className="nav-menu-items">
+                        <div className="mobile-menu-trigger" style={{display:"hidden"}}>
+                            {/* <!-- Mobile menu button--> */}
+                            <button type="button" className="mobile-menu-trigger-button" aria-controls="mobile-menu" aria-expanded="false">
+                                <span>Open main menu</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
                         </div>
-                        <div className="hidden sm:ml-6 sm:block">
-                            <div className="flex space-x-4">
-                                <a href="#" className= "text-black-600 px-3 py-2 rounded-md text-sm font-medium hover:text-primary" aria-current="page">Features</a>
-
-                                <a href="#" className="text-black-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover:text-primary">Solutions</a>
-
-                                <a href="#" className="text-black-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover:text-primary">Plans</a>
-
-                                <a href="#" className="text-black-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover:text-primary">Pricing</a>
+                        <div className="full-menu-bar-main">
+                            <div className="fmb-logo-Wrapper flex-shrink-0 items-center">
+                                <img src={logo} alt="cleartask"/>
+                            </div>
+                            <div className="fmb-menu-list-wrapper">
+                                <ul className="fmb-menu-list">
+                                    <li data-targetItem="drop1" onMouseEnter={onMenuItemMouseIn} onMouseLeave={onMenuItemMouseOut} aria-current="page">
+                                        <button type="button">Features</button>
+                                        {/* Navbar dropdown menu */}
+                                        <div className={dropdown.drop1}>
+                                            <div className="fmb-dropdown-row">
+                                                <div className="fmb-dropdown-links">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                                        </svg>
+                                                        <div className="dropdown-link-text">
+                                                            <p className="head">Analytics</p>
+                                                            <p className="body">Get a better understanding of where your traffic is coming from.</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                                                        </svg>
+                                                        <div className="dropdown-link-text">
+                                                            <p className="head">Engagement</p>
+                                                            <p className="body">Speak directly to your customers in a more meaningful way.</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" />
+                                                        </svg>
+                                                        <div className="dropdown-link-text">
+                                                            <p className="head">Automations</p>
+                                                            <p className="body">Build strategic funnels that will drive your customers to convert</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-targetItem="drop2">Solutions</li>
+                                    <li data-targetItem="drop3">Plans</li>
+                                    <li data-targetItem="drop4">Pricing</li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <button type="button" className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <span className="sr-only">View notifications</span>
-                            {/* <!-- Heroicon name: outline/bell --> */}
-                            <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                            </svg>
-                        </button>
-
-                        {/* <!-- Profile dropdown --> */}
-                        <div className="relative ml-3">
-                            <div>
-                                <button type="button" className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <span className="sr-only">Open user menu</span>
-                                <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
-                                </button>
-                            </div>
-                            <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                {/* <!-- Active: "bg-gray-100", Not Active: "" --> */}
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                        <div className="full-menu-bar-secondary">
+                            <button type="button">
+                                <span>View notifications</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                </svg>
+                            </button>
+                            <div className="profile-tab">
+                                <div>
+                                    <button type="button" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                        <span>Open user menu</span>
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
+                                    </button>
+                                </div>
+                                <div className="profile-tab-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                    <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                    <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                                    <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
                 {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-                <div className="sm:hidden" id="mobile-menu">
+                <div id="mobile-menu" style={{display:"hidden"}}>
                     <div className="space-y-1 px-2 pt-2 pb-3">
-                    {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                    <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+                    <a href="#" aria-current="page">Dashboard</a>
 
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+                    <a href="#">Team</a>
 
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                    <a href="#">Projects</a>
 
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+                    <a href="#">Calendar</a>
                     </div>
                 </div>
-        </nav>
-    </>
-    
-)
+            </nav>
+        </>
+
+    )
+}
+
 export default Header;
