@@ -28,9 +28,9 @@ function Header(){
     return(
         <>
             <nav className="navbar" >
-                <div className="nav-menu-desktop">
+                <div className="full-menu">
                     <div className="nav-menu-items">
-                        <div className="mobile-menu-trigger" style={{display:"hidden"}}>
+                        <div className="mobile-menu-trigger" style={{'display':"none"}}>
                             {/* <!-- Mobile menu button--> */}
                             <button type="button" className="mobile-menu-trigger-button" aria-controls="mobile-menu" aria-expanded="false">
                                 <span>Open main menu</span>
@@ -43,13 +43,18 @@ function Header(){
                             </button>
                         </div>
                         <div className="full-menu-bar-main">
-                            <div className="fmb-logo-Wrapper flex-shrink-0 items-center">
+                            <div className="fmb-logo-Wrapper">
                                 <img src={logo} alt="cleartask"/>
                             </div>
                             <div className="fmb-menu-list-wrapper">
                                 <ul className="fmb-menu-list">
                                     <li data-targetItem="drop1" onMouseEnter={onMenuItemMouseIn} onMouseLeave={onMenuItemMouseOut} aria-current="page">
-                                        <button type="button">Features</button>
+                                        <button type="button">
+                                            Features
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                <path stroke="black" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </button>
                                         {/* Navbar dropdown menu */}
                                         <div className={dropdown.drop1}>
                                             <div className="fmb-dropdown-row">
@@ -92,8 +97,20 @@ function Header(){
                             </div>
                         </div>
                         <div className="full-menu-bar-secondary">
+                            <ul>
+                                <li>
+                                    <button type="button">Login</button>
+                                </li>
+                                <li>
+                                    <button type="button">Get started</button>
+                                </li>
+                            </ul>
+                            {/* <button type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                </svg>
+                            </button>
                             <button type="button">
-                                <span>View notifications</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                 </svg>
@@ -101,22 +118,21 @@ function Header(){
                             <div className="profile-tab">
                                 <div>
                                     <button type="button" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                        <span>Open user menu</span>
                                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
                                     </button>
                                 </div>
-                                <div className="profile-tab-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                <div style={{"display":"none"}} className="profile-tab-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                                     <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
                                     <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                                     <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
 
                 {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-                <div id="mobile-menu" style={{display:"hidden"}}>
+                <div id="mobile-menu" style={{display:"none"}}>
                     <div className="space-y-1 px-2 pt-2 pb-3">
                     <a href="#" aria-current="page">Dashboard</a>
 
