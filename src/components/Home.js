@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Header from "./Header"
 
 class Home extends React.Component {
     constructor(props){
@@ -11,6 +12,8 @@ class Home extends React.Component {
 
     render(){
         return(
+            <>
+            <Header/>
             <div className="homePage">
                 <div className="contBox">
                     <h2>Welcome to Cleartask</h2>
@@ -21,6 +24,7 @@ class Home extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }
 }
