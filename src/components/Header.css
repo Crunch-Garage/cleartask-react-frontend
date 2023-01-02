@@ -5,6 +5,7 @@
     align-items: center;
     height: 64px;
     font-family: var(--font-family);
+    position: fixed;
 }
 
 .full-menu{
