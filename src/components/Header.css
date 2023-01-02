@@ -1,16 +1,119 @@
-.header{
+@import "../global/Imports.css";
+.navbar{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    font-family: var(--font-family);
 }
 
-.header-wrapper{
-    display: flex;
-    width:100%;
-    align-content: center;
-    border-bottom: 1px solid #c4c4c4;
-    padding:0 45px;
+.full-menu{
+    height:100%;
+    width:100vw;
+    padding: 0 25px;
 }
 
-.header-wrapper .logo{
+.nav-menu-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:100%;    align-items: center;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-menu-bar-main {
+    display: flex;
+    align-items: center;
+    height:100%;
+}
+
+.full-menu-bar-main .fmb-logo-Wrapper{
     height:40px;
+    height:100%;
+    display: flex;
+    align-items: center;
+    margin-right:35px;
+}
+
+.full-menu-bar-main .fmb-logo-Wrapper img{
+    height:35px;
     width:auto;
+}
+
+.fmb-menu-list-wrapper{
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+
+.fmb-menu-list{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.fmb-menu-list li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.fmb-menu-list li:not(:first-child){
+    margin-left: 35px;
+}
+
+.fmb-menu-list li button{
+    height:100%;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+}
+
+.fmb-menu-list li button svg{
+    height: 20px;
+    margin-left: 3px;
+}
+
+.fmb-menu-list li button:hover{
+    border-bottom:2px solid var(--primary-color);
+}
+
+.full-menu-bar-secondary,
+.full-menu-bar-secondary ul{
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+
+.full-menu-bar-secondary ul li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.full-menu-bar-secondary ul li:not(:first-child) button{
+    background-color: var(--primary-color);
+    padding:5px 15px;
+    border-radius: 25px;
+    color:#ffffff;
+}
+
+.full-menu-bar-secondary ul li:not(:first-child){
+    margin-left: 35px;
+}
+
+.full-menu-bar-secondary button svg{
+    width:24px;
+}
+
+.full-menu-bar-secondary .profile-tab img{
+    width:24px;
+    border-radius:100%;
 }
