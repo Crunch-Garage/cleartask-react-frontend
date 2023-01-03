@@ -3,4 +3,7 @@
     --hero-header-font-size:45px;
     --primary-header-font-size: 32px;
     --secondary-header-font-size:25px;
+    /* navbar */
+    --icon-spacing-right:14px;
+    --icon-spacing-top:5px
 }
