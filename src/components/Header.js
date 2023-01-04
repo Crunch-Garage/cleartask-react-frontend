@@ -47,7 +47,7 @@ const MainMenu = ()=>{
                         </button>
                         {/* Navbar dropdown menu */}
                         <div className={`${dropdown.drop1} fmb-dropdown-box`  }>
-                            <div className="fmb-dropdown-wrap">
+                            <div className="fmb-dropdown-wrap" onMouseLeave={onMenuItemMouseOut}>
                                 <div className="fmb-dropdown-row">
                                     <div className="fmb-dropdown-links">
                                         <a href="#">
@@ -98,7 +98,7 @@ const MainMenu = ()=>{
                         </button>
                         {/* Navbar dropdown menu */}
                         <div className={`${dropdown.drop2} fmb-dropdown-box`  } >
-                            <div className="fmb-dropdown-wrap">
+                            <div className="fmb-dropdown-wrap" onMouseLeave={onMenuItemMouseOut}>
                                 <div className="fmb-dropdown-row">
                                     <div className="fmb-dropdown-links">
                                         <a href="#">
