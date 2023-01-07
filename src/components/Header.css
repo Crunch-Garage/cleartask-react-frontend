@@ -87,6 +87,11 @@
     border-bottom:2px solid var(--primary-color);
 }
 
+.fmb-menu-list li button:hover svg,
+.fmb-menu-list li button[data-dropState="block"] svg{
+    transform: rotate(180deg);
+    transition: transform ease 0.25s;
+}
 
 .full-menu-bar-secondary,
 .full-menu-bar-secondary ul{
