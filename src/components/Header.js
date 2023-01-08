@@ -1,6 +1,14 @@
 import React from "react";
 import './Header.css';
 import logo from '../assets/solid.png';
+import TokenService from "../services/token";
+
+var isExpired = TokenService.tokenIsExpired();
+// TO DO: get user data
+var userData = {
+    username: "",
+    profile_photo: ""
+}
 
 const MainMenu = ()=>{
     const [dropdown, setDropdown] = React.useState({
@@ -233,36 +241,45 @@ const MainMenu = ()=>{
 const SecondaryMenu = ()=> {
     return(
         <div className="full-menu-bar-secondary">
-            <ul>
-                <li>
-                    <button type="button">Login</button>
-                </li>
-                <li>
-                    <button type="button">Get started</button>
-                </li>
-            </ul>
-            {/* <button type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                </svg>
-            </button>
-            <button type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                </svg>
-            </button>
-            <div className="profile-tab">
-                <div>
-                    <button type="button" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
-                    </button>
-                </div>
-                <div style={{"display":"none"}} className="profile-tab-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                    <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                    <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                    <a href="#" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-                </div>
-            </div> */}
+            {isExpired ? (
+                <ul className="unauthed">
+                    <li>
+                        <button type="button">Login</button>
+                    </li>
+                    <li>
+                        <button type="button">Get started</button>
+                    </li>
+                </ul>
+             ) : (
+                <ul className="authed">
+                    <li>
+                        <button type="button">
+                            <div className="icoWrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                </svg>
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button">
+                            {
+                            userData.profile_photo != "" ? (
+                                <div className="icoWrapper">
+                                    <span>KM</span>
+                                </div>
+                            ) : (
+                                <div className="icoWrapper">
+                                    <img src="https://images.unsplash.com/photo-1521856729154-7118f7181af9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="photo"/>
+                                </div>
+                            )
+                            }
+                        </button>
+                    </li>
+                </ul>
+             )
+                
+            }
         </div>
     )
 }
