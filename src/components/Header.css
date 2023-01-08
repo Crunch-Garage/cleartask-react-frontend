@@ -87,6 +87,11 @@
     border-bottom:2px solid var(--primary-color);
 }
 
+.fmb-menu-list li button:hover svg,
+.fmb-menu-list li button[data-dropState="block"] svg{
+    transform: rotate(180deg);
+    transition: transform ease 0.25s;
+}
 
 .full-menu-bar-secondary,
 .full-menu-bar-secondary ul{
@@ -103,7 +108,7 @@
     font-weight: 500;
 }
 
-.full-menu-bar-secondary ul li:not(:first-child) button{
+.full-menu-bar-secondary ul.unauthed li:not(:first-child) button{
     background-color: var(--primary-color);
     padding:5px 15px;
     border-radius: 25px;
@@ -118,9 +123,20 @@
     width:24px;
 }
 
-.full-menu-bar-secondary .profile-tab img{
+.full-menu-bar-secondary ul.authed button .icoWrapper{
+    padding: 2px;
+    border-radius: 50%;
+}
+
+.full-menu-bar-secondary ul.authed button .icoWrapper:hover{
+    background-color: var(--site-nav-drop-hover-color);
+}
+
+.full-menu-bar-secondary img{
     width:24px;
-    border-radius:100%;
+    height:24px;
+    object-fit: cover;
+    border-radius:50%;
 }
 
 .fmb-dropdown-box{

@@ -1,0 +1,33 @@
+import jwt_decode from "jwt-decode";
+// Service that handles the management of
+// user access and refresh tokens on the local storage
+
+// get access token 
+const getLocalAccessToken = () => {
+    const access_token = localStorage.getItem("access_token")
+    return access_token
+}
+
+
+// checks expiry of access token
+// TO DO: check expiry of refresh token
+const tokenIsExpired = () => {
+    var accessToken = getLocalAccessToken();
+
+    var decoded = jwt_decode(accessToken);
+    var dateNow = new Date;
+    var isExpired = false
+    if (decoded.exp*1000 < dateNow.getTime()){
+        isExpired = true;
+    }
+
+    return isExpired
+}
+
+const TokenService = {
+    getLocalAccessToken,
+    tokenIsExpired,
+
+}
+
+export default TokenService;
