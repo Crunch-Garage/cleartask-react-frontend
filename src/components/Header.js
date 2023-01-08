@@ -251,6 +251,7 @@ const SecondaryMenu = ()=> {
                     </li>
                 </ul>
              ) : (
+                //TO DO: Add drop down menu items
                 <ul className="authed">
                     <li>
                         <button type="button">
