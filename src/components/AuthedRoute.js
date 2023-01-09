@@ -1,9 +1,10 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import TokenService from "../services/token";
 
 // component that handles where to take authenticated users
 
-// const isAuthed = Boolean(localStorage.getItem("access_token"));
+var isExpired = TokenService.tokenIsExpired();
 
 class AuthedRoute extends React.Component {
   constructor(props){
@@ -20,10 +21,10 @@ class AuthedRoute extends React.Component {
   render(){
     return(
       <div>
-        { this.state.loggedIn ? (
-            <Outlet/>
-            ) : (
+        { isExpired ? (
             <Navigate to='/auth/login' replace={true}/>
+            ) : (
+              <Outlet/>
             )
         }
       </div>
