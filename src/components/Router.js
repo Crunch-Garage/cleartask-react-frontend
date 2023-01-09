@@ -3,6 +3,7 @@ import {
     Routes,
     Route,
   } from "react-router-dom";
+import Header from './Header';
 import PageNotFound from "./PageNotFound";
 import AuthedRoute from './AuthedRoute';
 import UnauthedRoute from './UnauthedRoute';
@@ -21,6 +22,7 @@ import Home from './Home';
 export default function AppRouter(){
     return(
         <BrowserRouter>
+            <Header/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 {/* any other route not defined redirect to 404 page */}
