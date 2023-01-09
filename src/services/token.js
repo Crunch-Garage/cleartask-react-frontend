@@ -16,9 +16,9 @@ const tokenIsExpired = () => {
 
     var decoded = jwt_decode(accessToken);
     var dateNow = new Date;
-    var isExpired = false
-    if (decoded.exp*1000 < dateNow.getTime()){
-        isExpired = true;
+    var isExpired = true
+    if (dateNow.getTime() < decoded.exp*1000 ){
+        isExpired = false;
     }
 
     return isExpired
