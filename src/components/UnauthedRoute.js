@@ -1,9 +1,10 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import TokenService from "../services/token";
 
 // component that handles where to take authenticated users
 
-// const isAuthed = Boolean(localStorage.getItem("access_token"));
+var isExpired = TokenService.tokenIsExpired();
 
 class UnauthedRoute extends React.Component {
   constructor(props){
@@ -20,7 +21,7 @@ class UnauthedRoute extends React.Component {
   render(){
     return(
       <div>
-        { this.state.loggedOut ? (
+        { isExpired ? (
             <Outlet/>
             ) : (
             <Navigate to='/dashboard/workspace' replace={true}/>
