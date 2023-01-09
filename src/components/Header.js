@@ -1,5 +1,6 @@
 import React from "react";
 import './Header.css';
+import { NavLink } from "react-router-dom";
 import logo from '../assets/solid.png';
 import TokenService from "../services/token";
 
@@ -62,7 +63,7 @@ const MainMenu = ()=>{
                                             <span>Tools</span>
                                         </div>
                                         <div className="fmb-dropdown-links">
-                                            <a href="#">
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -72,9 +73,9 @@ const MainMenu = ()=>{
                                                         <p className="body">Get a better understanding of where your traffic is coming from.</p>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </NavLink>
                     
-                                            <a href="#">
+                                            <NavLink to="/">                                               
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
@@ -84,8 +85,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Speak directly to your customers in a more meaningful way.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" />
@@ -95,8 +96,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Build strategic funnels that will drive your customers to convert</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -106,9 +107,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Get a better understanding of where your traffic is coming from.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                    
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
@@ -118,8 +118,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Speak directly to your customers in a more meaningful way.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" />
@@ -129,7 +129,7 @@ const MainMenu = ()=>{
                                                         <p className="body">Build strategic funnels that will drive your customers to convert</p>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </NavLink>
                                         </div>
                                     </div>
                                     <div className="divider"></div>
@@ -155,7 +155,7 @@ const MainMenu = ()=>{
                                             <span>Solutions</span>
                                         </div>
                                         <div className="fmb-dropdown-links">
-                                            <a href="#">
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -165,8 +165,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Get a better understanding of where your traffic is coming from.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
@@ -176,8 +176,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Speak directly to your customers in a more meaningful way.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" />
@@ -187,8 +187,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Build strategic funnels that will drive your customers to convert</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -198,8 +198,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Get a better understanding of where your traffic is coming from.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
@@ -209,8 +209,8 @@ const MainMenu = ()=>{
                                                         <p className="body">Speak directly to your customers in a more meaningful way.</p>
                                                     </div>
                                                 </div>
-                                            </a>
-                                            <a href="#">
+                                            </NavLink>
+                                            <NavLink to="/">
                                                 <div className="link-item">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" />
@@ -220,7 +220,7 @@ const MainMenu = ()=>{
                                                         <p className="body">Build strategic funnels that will drive your customers to convert</p>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </NavLink>
                                         </div>
                                     </div>
                                     <div className="divider"></div>
@@ -244,10 +244,14 @@ const SecondaryMenu = ()=> {
             {isExpired ? (
                 <ul className="unauthed">
                     <li>
-                        <button type="button">Login</button>
+                        <NavLink to="/auth/login">
+                            <button type="button">Login</button>
+                        </NavLink>
                     </li>
                     <li>
-                        <button type="button">Get started</button>
+                        <NavLink to="/auth/signup">
+                            <button type="button">Get started</button>
+                        </NavLink>
                     </li>
                 </ul>
              ) : (
