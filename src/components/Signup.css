@@ -82,13 +82,15 @@
 }
 
 .formContainer form button{
-    height:45px;
-    border-radius: 5px;
-    background-color: #cc0000;
-    border:none;
-    color:#fff;
-    margin-top: 15px;
-    cursor: pointer;
+    background-color: var(--primary-color);
+    padding:10px 5px;
+    border-radius: 25px;
+    color:#ffffff;
+    margin-top:15px;
+}
+
+.formContainer form button:hover{
+    background-color: var(--secondary-button-color);
 }
 
 .formContainer form input.fieldError{
