@@ -2,6 +2,7 @@ import {
     BrowserRouter,
     Routes,
     Route,
+    Outlet,
   } from "react-router-dom";
 import Header from './Header';
 import PageNotFound from "./PageNotFound";
@@ -19,28 +20,42 @@ import Tasks from './dashboard/Tasks';
 import Home from './Home';
 
 
+const WithoutNav = ()=>{
+    return <Outlet/>
+}
+
+const WithNav = ()=> (
+    <>
+        <Header/>
+        <Outlet/>
+    </>
+)
+
 export default function AppRouter(){
     return(
         <BrowserRouter>
-            <Header/>
             <Routes>
-                <Route path='/' element={<Home/>}/>
-                {/* any other route not defined redirect to 404 page */}
-                <Route path='*' element={<PageNotFound/>}/>
-                {/* If not authenticated */}
-                <Route element={<UnauthedRoute/>}>
-                <Route path="/auth/signup" element={<Signup/>}/>
-                <Route path="/auth/login" element={<Login/>}/>
+                <Route element={<WithoutNav/>}>
+                    {/* If not authenticated */}
+                    <Route element={<UnauthedRoute/>}>
+                        <Route path="/auth/signup" element={<Signup/>}/>
+                        <Route path="/auth/login" element={<Login/>}/>
+                    </Route>
+                    {/* If authenticated */}
+                    <Route element={<AuthedRoute />}>
+                        <Route path="/dashboard/workspace" element={<Workspace/>}/>
+                        <Route path="/dashboard/inbox" element={<Inbox/>}/>
+                        <Route path="/dashboard/notifications" element={<Notifications/>}/>
+                        <Route path="/dashboard/profile" element={<Profile/>}/>
+                        <Route path="/dashboard/projects" element={<Projects/>}/>
+                        <Route path="/dashboard/settings" element={<Settings/>}/>
+                        <Route path="/dashboard/tasks" element={<Tasks/>}/>
+                    </Route>
+                    {/* any other route not defined redirect to 404 page */}
+                    <Route path='*' element={<PageNotFound/>}/>
                 </Route>
-                {/* If authenticated */}
-                <Route element={<AuthedRoute />}>
-                    <Route path="/dashboard/workspace" element={<Workspace/>}/>
-                    <Route path="/dashboard/inbox" element={<Inbox/>}/>
-                    <Route path="/dashboard/notifications" element={<Notifications/>}/>
-                    <Route path="/dashboard/profile" element={<Profile/>}/>
-                    <Route path="/dashboard/projects" element={<Projects/>}/>
-                    <Route path="/dashboard/settings" element={<Settings/>}/>
-                    <Route path="/dashboard/tasks" element={<Tasks/>}/>
+                <Route element={<WithNav/>}>
+                    <Route path='/' element={<Home/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

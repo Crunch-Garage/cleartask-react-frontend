@@ -1,17 +1,27 @@
 import React from 'react';
 import './Signup.css';
 import {Container, Grid} from '@mui/material';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 import { Link } from "react-router-dom";
-import p1 from '../assets/p1.jpg';
-import logo from '../assets/logo.png';
+import logo from '../assets/solid.png';
 
 const axios = require('axios');
 const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8000';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
+const SignUpNavbar = ()=>{
+    return(
+        <nav className='auth-nav'>
+            <div className='wrapper'>
+                <Link to="/">
+                    <img src={logo} alt=""/>
+                </Link>
+                <div className="right-menu">
+                    <span>Already have an account?</span>
+                    <Link to="/auth/login"><button type="button">Login!</button></Link>
+                </div>
+            </div>
+        </nav>
+    )
+}
 class Signup extends React.Component {
     constructor(props){
         super(props);
@@ -92,11 +102,9 @@ class Signup extends React.Component {
             <Container className="formContainer">
                 <Grid container spacing={3} className="formContainerGrid">
                     <Grid item xs>
+                        <SignUpNavbar/>
                         <div className='authWrapper'>
                             <div className='authHead'>
-                                <div class="authHeadLogo">
-                                    <img src={logo} alt=""/>
-                                </div>
                                 <h2>Ready to get more done</h2>
                                 <p>Create an account to begin</p>
                             </div>
@@ -118,36 +126,14 @@ class Signup extends React.Component {
                                     <span className='formErrors'>{this.state.passwordErrors}</span>
                                 </div>
                                 <button type='submit'>Sign up</button>
-                                <div className="formFooter">
-                                    <p>Already have an account? <Link to="/login">Login instead.</Link></p>
-                                </div>
                             </form>
+                        </div>
+                        <div className="formFooter">
+                                <span> &copy;Cleartask {new Date().getFullYear()}</span>
                         </div>
                     </Grid>
                     <Grid item xs={6}>
-                        <AutoPlaySwipeableViews className="slideView">
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                        </AutoPlaySwipeableViews>
+                        <div className="slideView"/>
                     </Grid>
                 </Grid>
             </Container>
