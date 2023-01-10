@@ -1,28 +1,27 @@
 import React from 'react';
 import './Signup.css';
 import {Container, Grid} from '@mui/material';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 import { Link } from "react-router-dom";
-import p1 from '../assets/p1.jpg';
 import logo from '../assets/solid.png';
+import './Login.css';
 
 const axios = require('axios');
 const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8080';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const LoginNavbar = ()=>{
     return(
-        <nav>
-        <Link to="/">
-            <img src={logo} alt=""/>
-        </Link>
-        <div className="right-nav">
-            <span>Don't have an account?</span>
-            <Link to="auth/signup"><button type="button">Sign up!</button></Link>
-        </div>
-    </nav>
+        <nav className='auth-nav'>
+            <div className='wrapper'>
+                <Link to="/">
+                    <img src={logo} alt=""/>
+                </Link>
+                <div className="right-menu">
+                    <span>Don't have an account?</span>
+                    <Link to="auth/signup"><button type="button">Sign up!</button></Link>
+                </div>
+            </div>
+        </nav>
     )
 }
 
@@ -89,19 +88,14 @@ class Login extends React.Component {
             ) : this.setState({passwordErrors:"This field is required"})
         ) : this.setState({idErrors:"This field is required"})
     };
-
     render(){
         return(
-            <>
-                <LoginNavbar/>
                 <Container className="formContainer">
                     <Grid container spacing={3} className="formContainerGrid">
                         <Grid item xs>
+                            <LoginNavbar/>
                             <div className='authWrapper'>
                                 <div className='authHead'>
-                                    <div class="authHeadLogo">
-                                        <img src={logo} alt=""/>
-                                    </div>
                                     <h2>Glad to have you back</h2>
                                     <p>Login to continue</p>
                                 </div>
@@ -112,40 +106,18 @@ class Login extends React.Component {
                                     <input id='password' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password' placeholder='Enter your password' autoComplete='on' onChange={(e)=> this.handleChange({password:e.target.value})} required></input>
                                     <span className='formErrors'>{this.state.passwordErrors}</span>
                                     <button type='submit'>Login</button>
-                                    <div className="formFooter">
-                                        <p>Don't have an account yet? <Link to="/signup">Sign up for free.</Link></p>
-                                    </div>
+                                    
                                 </form>
+                            </div>
+                            <div className="formFooter">
+                                <span> &copy;Cleartask {new Date().getFullYear()}</span>
                             </div>
                         </Grid>
                         <Grid item xs={6}>
-                            <AutoPlaySwipeableViews className="slideView">
-                                <div className='slideBody'>
-                                    <img src={p1} alt=''/>
-                                    <div className='text'>
-                                        <h6>Lorem Ipsum</h6>
-                                        <p>A short description goes here</p>
-                                    </div>
-                                </div>
-                                <div className='slideBody'>
-                                    <img src={p1} alt=''/>
-                                    <div className='text'>
-                                        <h6>Lorem Ipsum</h6>
-                                        <p>A short description goes here</p>
-                                    </div>
-                                </div>
-                                <div className='slideBody'>
-                                    <img src={p1} alt=''/>
-                                    <div className='text'>
-                                        <h6>Lorem Ipsum</h6>
-                                        <p>A short description goes here</p>
-                                    </div>
-                                </div>
-                            </AutoPlaySwipeableViews>
+                            <div className="slideView"/>
                         </Grid>
                     </Grid>
                 </Container>
-            </>
         )
     }
 
