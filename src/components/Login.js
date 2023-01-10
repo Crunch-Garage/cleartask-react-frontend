@@ -96,8 +96,8 @@ class Login extends React.Component {
                             <LoginNavbar/>
                             <div className='authWrapper'>
                                 <div className='authHead'>
-                                    <h2>Glad to have you back</h2>
-                                    <p>Login to continue</p>
+                                    <h2>Welcome back!</h2>
+                                    <p>Login to your account to continue.</p>
                                 </div>
                                 <form onSubmit={this.loginUser}>
                                     <span className={this.state.authErrors ? 'formErrors AuthError' : ''}>{this.state.authErrors}</span>
