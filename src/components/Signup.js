@@ -105,9 +105,6 @@ class Signup extends React.Component {
                         <SignUpNavbar/>
                         <div className='authWrapper'>
                             <div className='authHead'>
-                                <div class="authHeadLogo">
-                                    <img src={logo} alt=""/>
-                                </div>
                                 <h2>Ready to get more done</h2>
                                 <p>Create an account to begin</p>
                             </div>
@@ -129,9 +126,6 @@ class Signup extends React.Component {
                                     <span className='formErrors'>{this.state.passwordErrors}</span>
                                 </div>
                                 <button type='submit'>Sign up</button>
-                                <div className="formFooter">
-                                    <p>Already have an account? <Link to="/login">Login instead.</Link></p>
-                                </div>
                             </form>
                         </div>
                         <div className="formFooter">
