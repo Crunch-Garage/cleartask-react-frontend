@@ -43,7 +43,9 @@ const MainMenu = ()=>{
     return(
         <div className="full-menu-bar-main">
             <div className="fmb-logo-Wrapper">
-                <img src={logo} alt="cleartask"/>
+                <NavLink to="/">
+                    <img src={logo} alt="cleartask"/>
+                </NavLink>
             </div>
             <div className="fmb-menu-list-wrapper">
                 <ul className="fmb-menu-list">
