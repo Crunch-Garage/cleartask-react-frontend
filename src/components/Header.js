@@ -1,6 +1,6 @@
 import React from "react";
 import './Header.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from '../assets/solid.png';
 import TokenService from "../services/token";
 
@@ -43,9 +43,9 @@ const MainMenu = ()=>{
     return(
         <div className="full-menu-bar-main">
             <div className="fmb-logo-Wrapper">
-                <NavLink to="/">
+                <Link to="/">
                     <img src={logo} alt="cleartask"/>
-                </NavLink>
+                </Link>
             </div>
             <div className="fmb-menu-list-wrapper">
                 <ul className="fmb-menu-list">
