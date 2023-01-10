@@ -1,10 +1,7 @@
 import React from 'react';
 import './Signup.css';
 import {Container, Grid} from '@mui/material';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 import { Link } from "react-router-dom";
-import p1 from '../assets/p1.jpg';
 import logo from '../assets/solid.png';
 
 const axios = require('axios');
