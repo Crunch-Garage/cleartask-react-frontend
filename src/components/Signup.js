@@ -7,6 +7,21 @@ import logo from '../assets/solid.png';
 const axios = require('axios');
 const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8000';
 
+const SignUpNavbar = ()=>{
+    return(
+        <nav className='auth-nav'>
+            <div className='wrapper'>
+                <Link to="/">
+                    <img src={logo} alt=""/>
+                </Link>
+                <div className="right-menu">
+                    <span>Already have an account?</span>
+                    <Link to="/login"><button type="button">Login!</button></Link>
+                </div>
+            </div>
+        </nav>
+    )
+}
 class Signup extends React.Component {
     constructor(props){
         super(props);
@@ -87,6 +102,7 @@ class Signup extends React.Component {
             <Container className="formContainer">
                 <Grid container spacing={3} className="formContainerGrid">
                     <Grid item xs>
+                        <SignUpNavbar/>
                         <div className='authWrapper'>
                             <div className='authHead'>
                                 <div class="authHeadLogo">
@@ -117,6 +133,9 @@ class Signup extends React.Component {
                                     <p>Already have an account? <Link to="/login">Login instead.</Link></p>
                                 </div>
                             </form>
+                        </div>
+                        <div className="formFooter">
+                                <span> &copy;Cleartask {new Date().getFullYear()}</span>
                         </div>
                     </Grid>
                     <Grid item xs={6}>
