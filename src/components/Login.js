@@ -12,6 +12,20 @@ const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8080';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
+const LoginNavbar = ()=>{
+    return(
+        <nav>
+        <Link to="/">
+            <img src={logo} alt=""/>
+        </Link>
+        <div className="right-nav">
+            <span>Don't have an account?</span>
+            <Link to="auth/signup"><button type="button">Sign up!</button></Link>
+        </div>
+    </nav>
+    )
+}
+
 class Login extends React.Component {
     constructor(props){
         super(props);
@@ -78,57 +92,60 @@ class Login extends React.Component {
 
     render(){
         return(
-            <Container className="formContainer">
-                <Grid container spacing={3} className="formContainerGrid">
-                    <Grid item xs>
-                        <div className='authWrapper'>
-                            <div className='authHead'>
-                                <div class="authHeadLogo">
-                                    <img src={logo} alt=""/>
+            <>
+                <LoginNavbar/>
+                <Container className="formContainer">
+                    <Grid container spacing={3} className="formContainerGrid">
+                        <Grid item xs>
+                            <div className='authWrapper'>
+                                <div className='authHead'>
+                                    <div class="authHeadLogo">
+                                        <img src={logo} alt=""/>
+                                    </div>
+                                    <h2>Glad to have you back</h2>
+                                    <p>Login to continue</p>
                                 </div>
-                                <h2>Glad to have you back</h2>
-                                <p>Login to continue</p>
+                                <form onSubmit={this.loginUser}>
+                                    <span className={this.state.authErrors ? 'formErrors AuthError' : ''}>{this.state.authErrors}</span>
+                                    <input id='identifier' className={this.state.idErrors ? 'fieldError' : ''} name='identifier' placeholder='Username,Email or Phone number' onChange={(e)=> this.handleChange({identifier:e.target.value})} required></input>
+                                    <span className='formErrors'>{this.state.idErrors}</span>
+                                    <input id='password' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password' placeholder='Enter your password' autoComplete='on' onChange={(e)=> this.handleChange({password:e.target.value})} required></input>
+                                    <span className='formErrors'>{this.state.passwordErrors}</span>
+                                    <button type='submit'>Login</button>
+                                    <div className="formFooter">
+                                        <p>Don't have an account yet? <Link to="/signup">Sign up for free.</Link></p>
+                                    </div>
+                                </form>
                             </div>
-                            <form onSubmit={this.loginUser}>
-                                <span className={this.state.authErrors ? 'formErrors AuthError' : ''}>{this.state.authErrors}</span>
-                                <input id='identifier' className={this.state.idErrors ? 'fieldError' : ''} name='identifier' placeholder='Username,Email or Phone number' onChange={(e)=> this.handleChange({identifier:e.target.value})} required></input>
-                                <span className='formErrors'>{this.state.idErrors}</span>
-                                <input id='password' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password' placeholder='Enter your password' autoComplete='on' onChange={(e)=> this.handleChange({password:e.target.value})} required></input>
-                                <span className='formErrors'>{this.state.passwordErrors}</span>
-                                <button type='submit'>Login</button>
-                                <div className="formFooter">
-                                    <p>Don't have an account yet? <Link to="/signup">Sign up for free.</Link></p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <AutoPlaySwipeableViews className="slideView">
+                                <div className='slideBody'>
+                                    <img src={p1} alt=''/>
+                                    <div className='text'>
+                                        <h6>Lorem Ipsum</h6>
+                                        <p>A short description goes here</p>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
+                                <div className='slideBody'>
+                                    <img src={p1} alt=''/>
+                                    <div className='text'>
+                                        <h6>Lorem Ipsum</h6>
+                                        <p>A short description goes here</p>
+                                    </div>
+                                </div>
+                                <div className='slideBody'>
+                                    <img src={p1} alt=''/>
+                                    <div className='text'>
+                                        <h6>Lorem Ipsum</h6>
+                                        <p>A short description goes here</p>
+                                    </div>
+                                </div>
+                            </AutoPlaySwipeableViews>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={6}>
-                        <AutoPlaySwipeableViews className="slideView">
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                        </AutoPlaySwipeableViews>
-                    </Grid>
-                </Grid>
-            </Container>
+                </Container>
+            </>
         )
     }
 
