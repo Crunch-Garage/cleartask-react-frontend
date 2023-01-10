@@ -18,7 +18,7 @@ const LoginNavbar = ()=>{
                 </Link>
                 <div className="right-menu">
                     <span>Don't have an account?</span>
-                    <Link to="auth/signup"><button type="button">Sign up!</button></Link>
+                    <Link to="/auth/signup"><button type="button">Sign up!</button></Link>
                 </div>
             </div>
         </nav>

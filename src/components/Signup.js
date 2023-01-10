@@ -16,7 +16,7 @@ const SignUpNavbar = ()=>{
                 </Link>
                 <div className="right-menu">
                     <span>Already have an account?</span>
-                    <Link to="/login"><button type="button">Login!</button></Link>
+                    <Link to="/auth/login"><button type="button">Login!</button></Link>
                 </div>
             </div>
         </nav>
