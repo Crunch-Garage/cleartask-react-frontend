@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import Header from "./Header"
 
@@ -20,7 +21,7 @@ class Home extends React.Component {
                     <p>Clear more tasks off your to do list. Get more work done! It's that simple. </p>
 
                     <div className="QuickLinks">
-                        <a href="/dashboard/workspace/"><button type="button">Go to my clearboard</button></a>
+                        <Link to="/dashboard/workspace/"><button type="button">Go to my clearboard</button></Link>
                     </div>
                 </div>
             </div>
