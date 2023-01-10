@@ -10,8 +10,6 @@ import logo from '../assets/solid.png';
 const axios = require('axios');
 const baseURL = process.env.REACT_APP_BASEAPIURL || 'http://127.0.0.1:8000';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
 class Signup extends React.Component {
     constructor(props){
         super(props);
@@ -125,29 +123,7 @@ class Signup extends React.Component {
                         </div>
                     </Grid>
                     <Grid item xs={6}>
-                        <AutoPlaySwipeableViews className="slideView">
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                            <div className='slideBody'>
-                                <img src={p1} alt=''/>
-                                <div className='text'>
-                                    <h6>Lorem Ipsum</h6>
-                                    <p>A short description goes here</p>
-                                </div>
-                            </div>
-                        </AutoPlaySwipeableViews>
+                        <div className="slideView"/>
                     </Grid>
                 </Grid>
             </Container>
