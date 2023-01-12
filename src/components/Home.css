@@ -3,33 +3,107 @@
 .homePage{
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     font-family: var(--font-family);
 }
 
 .homePage .contBox{
-    border:1px solid #f5f5f5;
-    padding: 10px 15px;
-    border-radius: 15px;
-    min-height: 200px;  
+    width:100%;
+    padding-top:210px;
 }
 
-.homePage .contBox h2{
-    font-size:var(--primary-header-font-size);
+.gridLeft{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.QuickLinks button{
-    background-color: var(--primary-button-color);
-    padding:10px 25px;
-    min-width: 120px;
-    color:#ffffff;
-    border-radius:20px;
+.gridLeft h2{
+    font-size:var(--hero-header-font-size);
+    line-height: 3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: start;
+}
+
+.gridLeft p{
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.gridLeft form{
+    width:100%;
+}
+
+.gridLeft form .cta{
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top:10px;
+}
+
+.gridLeft form  .cta span{
+    text-transform: uppercase;
+    text-align: start;
+    font-size: 1rem;
+    font-weight: bold;
+    color:#c4c4c4;
+}
+
+.gridLeft form input{
+    width: 100%;
     border:none;
-    cursor: pointer;
+    border-radius:3px;
+    border:1px solid #ddd;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    margin:5px 0px;
 }
 
-.QuickLinks button:hover{
+.gridLeft form button{
+    background-color: var(--primary-color);
+    padding:12px 35px;
+    border-radius: 3px;
+    color:#ffffff;
+    margin-right:15px;
+}
+
+.gridLeft form button:hover{
     background-color: var(--secondary-button-color);
+}
+
+.gridLeft form input::placeholder{
+    font-size:1rem;
+}
+
+.gridLeft .ratingStats{
+    margin-top: 50px;
+}
+
+.gridLeft .ratingStats .top{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.gridLeft .ratingStats .ratingStars{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.gridLeft .reviewApps{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 15px;
+} 
+
+.gridLeft .reviewApps img{
+    width: auto;
+    height:30px;
+    margin-right: 15px;
 }
