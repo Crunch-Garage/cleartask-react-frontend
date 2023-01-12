@@ -48,12 +48,6 @@ class Home extends React.Component {
                             </Grid>
                         </Grid>
                     </Container>
-                    <h2>Welcome to Cleartask</h2>
-                    <p>Clear more tasks off your to do list. Get more work done! It's that simple. </p>
-
-                    <div className="QuickLinks">
-                        <Link to="/dashboard/workspace/"><button type="button">Go to my clearboard</button></Link>
-                    </div>
                 </div>
             </div>
             </>
