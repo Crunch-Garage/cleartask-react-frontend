@@ -74,17 +74,3 @@
 .gridLeft form input::placeholder{
     font-size:1rem;
 }
-
-.QuickLinks button{
-    background-color: var(--primary-button-color);
-    padding:10px 25px;
-    min-width: 120px;
-    color:#ffffff;
-    border-radius:20px;
-    border:none;
-    cursor: pointer;
-}
-
-.QuickLinks button:hover{
-    background-color: var(--secondary-button-color);
-}
