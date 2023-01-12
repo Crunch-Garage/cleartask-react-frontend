@@ -71,6 +71,10 @@
     margin-right:15px;
 }
 
+.gridLeft form button:hover{
+    background-color: var(--secondary-button-color);
+}
+
 .gridLeft form input::placeholder{
     font-size:1rem;
 }
