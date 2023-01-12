@@ -1,6 +1,6 @@
 :root{
     --base-font-size:15px;
-    --hero-header-font-size:45px;
+    --hero-header-font-size:3rem;
     --primary-header-font-size: 32px;
     --secondary-header-font-size:25px;
     /* navbar */
