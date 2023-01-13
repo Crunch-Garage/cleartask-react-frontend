@@ -5,6 +5,7 @@ import {
     Outlet,
   } from "react-router-dom";
 import Header from './Header';
+import Footer from "./Footer";
 import PageNotFound from "./PageNotFound";
 import AuthedRoute from './AuthedRoute';
 import UnauthedRoute from './UnauthedRoute';
@@ -28,6 +29,7 @@ const WithNav = ()=> (
     <>
         <Header/>
         <Outlet/>
+        <Footer/>
     </>
 )
 

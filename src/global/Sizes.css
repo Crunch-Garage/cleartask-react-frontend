@@ -1,8 +1,8 @@
 :root{
     --base-font-size:15px;
     --hero-header-font-size:3rem;
-    --primary-header-font-size: 32px;
-    --secondary-header-font-size:25px;
+    --primary-header-font-size: 2rem;
+    --secondary-header-font-size:1.5rem;
     /* navbar */
     --icon-spacing-right:14px;
     --icon-spacing-top:5px

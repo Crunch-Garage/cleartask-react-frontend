@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import getApp from '../assets/getApp.png';
 import trusPilot from '../assets/truspilot.png';
 import capterra from '../assets/capterra.png';
+import hr from '../assets/hr.png';
+import airbnb from '../assets/airbnb.png';
+import instagram from '../assets/instagram.png';
+import github from '../assets/github.png';
+import snapchat from '../assets/snapchat.png';
 import "./Home.css";
-import Header from "./Header"
 
 
 const GetStartedInput = ()=>{
@@ -68,7 +72,6 @@ class Home extends React.Component {
     render(){
         return(
             <>
-            <Header/>
             <div className="homePage">
                 <div className="contBox">
                     <Container>
@@ -80,11 +83,32 @@ class Home extends React.Component {
                                 <ReviewOverview/>
                             </Grid>
                             <Grid item xs>
-                                
+                                <div className="heroGraphic">
+                                    <img src={hr} alt="dashboard"/>
+                                </div>
                             </Grid>
                         </Grid>
                     </Container>
                 </div>
+                <section className="partners">
+                <Container className="partners__container">
+                    <h2>Trusted by global companies</h2>
+                    <Grid container spacing={5} className="partners__companies">
+                        <Grid item xs="auto" className="partners__company">
+                            <img src={airbnb} alt="airbnb"/>
+                        </Grid>
+                        <Grid item xs="auto" className="partners__company">
+                            <img src={github} alt="github"/>
+                        </Grid>
+                        <Grid item xs="auto" className="partners__company">
+                            <img src={instagram} alt="instagram"/>
+                        </Grid>
+                        <Grid item xs="auto" className="partners__company">
+                            <img src={snapchat} alt="snapchat"/>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </section>
             </div>
             </>
         )
