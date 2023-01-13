@@ -11,7 +11,7 @@
 
 .homePage .contBox{
     width:100%;
-    padding-top:210px;
+    padding-top:150px;
 }
 
 .gridLeft{
@@ -97,6 +97,10 @@
     margin-right: 15px;
 }
 
+.gridLeft .ratingStats .ratingStars svg{
+    width: 20px !important;
+}
+
 .gridLeft .reviewApps{
     display: flex;
     flex-wrap: wrap;
@@ -106,7 +110,7 @@
 
 .gridLeft .reviewApps img{
     width: auto;
-    height:30px;
+    height:20px;
     margin-right: 15px;
 }
 
@@ -121,7 +125,7 @@
 .heroGraphic img{
     position: relative;
     width: 500px;
-    top:-50px;
+    top:-25px;
 }
 
 .partners{
