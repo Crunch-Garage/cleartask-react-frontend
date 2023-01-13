@@ -73,7 +73,7 @@ class Home extends React.Component {
         return(
             <>
             <div className="homePage">
-                <div className="contBox">
+                <section className="contBox">
                     <Container>
                         <Grid container spacing={3} className="heroGrid">
                             <Grid item xs={5} className="gridLeft gridText">
@@ -89,7 +89,7 @@ class Home extends React.Component {
                             </Grid>
                         </Grid>
                     </Container>
-                </div>
+                </section>
                 <section className="partners">
                 <Container className="partners__container">
                     <h2>Trusted by global companies</h2>
