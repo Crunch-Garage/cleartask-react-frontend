@@ -71,46 +71,46 @@ class Home extends React.Component {
 
     render(){
         return(
-            <>
-            <div className="homePage">
-                <section className="contBox">
-                    <Container>
-                        <Grid container spacing={3} className="heroGrid">
-                            <Grid item xs={5} className="gridLeft gridText">
-                                <h2>All your projects & tasks in one place!</h2>
-                                <p>Get more productive. Get clear!</p>
-                                <GetStartedInput/>
-                                <ReviewOverview/>
+            <main className="main">
+                <div className="homePage">
+                    <section className="contBox">
+                        <Container>
+                            <Grid container spacing={3} className="heroGrid">
+                                <Grid item xs={5} className="gridLeft gridText">
+                                    <h2>All your projects & tasks in one place!</h2>
+                                    <p>Get more productive. Get clear!</p>
+                                    <GetStartedInput/>
+                                    <ReviewOverview/>
+                                </Grid>
+                                <Grid item xs={7}>
+                                    <div className="heroGraphic">
+                                        <img src={hr} alt="dashboard"/>
+                                    </div>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={7}>
-                                <div className="heroGraphic">
-                                    <img src={hr} alt="dashboard"/>
-                                </div>
+                        </Container>
+                    </section>
+                </div>
+                <section className="partners">
+                    <Container className="partners__container">
+                        <h2>Trusted by global companies</h2>
+                        <Grid container spacing={5} className="partners__companies">
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={airbnb} alt="airbnb"/>
+                            </Grid>
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={github} alt="github"/>
+                            </Grid>
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={instagram} alt="instagram"/>
+                            </Grid>
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={snapchat} alt="snapchat"/>
                             </Grid>
                         </Grid>
                     </Container>
                 </section>
-                <section className="partners">
-                <Container className="partners__container">
-                    <h2>Trusted by global companies</h2>
-                    <Grid container spacing={5} className="partners__companies">
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={airbnb} alt="airbnb"/>
-                        </Grid>
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={github} alt="github"/>
-                        </Grid>
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={instagram} alt="instagram"/>
-                        </Grid>
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={snapchat} alt="snapchat"/>
-                        </Grid>
-                    </Grid>
-                </Container>
-            </section>
-            </div>
-            </>
+            </main>
         )
     }
 }
