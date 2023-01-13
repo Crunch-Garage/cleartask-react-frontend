@@ -50,7 +50,7 @@ const ReviewOverview =()=>{
                         <path strokeLinecap="round" strokeLinejoin="round"  d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
                     </svg>
                 </div>
-                <span>Base on 5000+ reviews on</span>
+                <span>Based on 5000+ reviews on</span>
             </div>
             <div className="reviewApps">
                 <img src={getApp}/>
@@ -71,46 +71,46 @@ class Home extends React.Component {
 
     render(){
         return(
-            <>
-            <div className="homePage">
-                <div className="contBox">
-                    <Container>
-                        <Grid container spacing={3} className="heroGrid">
-                            <Grid item xs className="gridLeft gridText">
-                                <h2>All your projects & tasks in one place!</h2>
-                                <p>Get more productive. Get clear!</p>
-                                <GetStartedInput/>
-                                <ReviewOverview/>
+            <main className="main">
+                <div className="homePage">
+                    <section className="contBox">
+                        <Container>
+                            <Grid container spacing={3} className="heroGrid">
+                                <Grid item xs={5} className="gridLeft gridText">
+                                    <h2>All your projects & tasks in one place!</h2>
+                                    <p>Get more productive. Get clear!</p>
+                                    <GetStartedInput/>
+                                    <ReviewOverview/>
+                                </Grid>
+                                <Grid item xs={7}>
+                                    <div className="heroGraphic">
+                                        <img src={hr} alt="dashboard"/>
+                                    </div>
+                                </Grid>
                             </Grid>
-                            <Grid item xs>
-                                <div className="heroGraphic">
-                                    <img src={hr} alt="dashboard"/>
-                                </div>
+                        </Container>
+                    </section>
+                </div>
+                <section className="partners">
+                    <Container className="partners__container">
+                        <h2>Trusted by global companies</h2>
+                        <Grid container spacing={5} className="partners__companies">
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={airbnb} alt="airbnb"/>
+                            </Grid>
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={github} alt="github"/>
+                            </Grid>
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={instagram} alt="instagram"/>
+                            </Grid>
+                            <Grid item xs="auto" className="partners__company">
+                                <img src={snapchat} alt="snapchat"/>
                             </Grid>
                         </Grid>
                     </Container>
-                </div>
-                <section className="partners">
-                <Container className="partners__container">
-                    <h2>Trusted by global companies</h2>
-                    <Grid container spacing={5} className="partners__companies">
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={airbnb} alt="airbnb"/>
-                        </Grid>
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={github} alt="github"/>
-                        </Grid>
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={instagram} alt="instagram"/>
-                        </Grid>
-                        <Grid item xs="auto" className="partners__company">
-                            <img src={snapchat} alt="snapchat"/>
-                        </Grid>
-                    </Grid>
-                </Container>
-            </section>
-            </div>
-            </>
+                </section>
+            </main>
         )
     }
 }
