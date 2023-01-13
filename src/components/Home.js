@@ -76,13 +76,13 @@ class Home extends React.Component {
                 <div className="contBox">
                     <Container>
                         <Grid container spacing={3} className="heroGrid">
-                            <Grid item xs className="gridLeft gridText">
+                            <Grid item xs={5} className="gridLeft gridText">
                                 <h2>All your projects & tasks in one place!</h2>
                                 <p>Get more productive. Get clear!</p>
                                 <GetStartedInput/>
                                 <ReviewOverview/>
                             </Grid>
-                            <Grid item xs>
+                            <Grid item xs={7}>
                                 <div className="heroGraphic">
                                     <img src={hr} alt="dashboard"/>
                                 </div>
