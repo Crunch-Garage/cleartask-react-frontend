@@ -14,11 +14,13 @@ const getLocalAccessToken = () => {
 const tokenIsExpired = () => {
     var accessToken = getLocalAccessToken();
 
-    var decoded = jwt_decode(accessToken);
-    var dateNow = new Date;
     var isExpired = true
-    if (dateNow.getTime() < decoded.exp*1000 ){
-        isExpired = false;
+    if (accessToken){
+        var decoded = jwt_decode(accessToken);
+        var dateNow = new Date;
+        if (dateNow.getTime() < decoded.exp*1000 ){
+            isExpired = false;
+        }
     }
 
     return isExpired
