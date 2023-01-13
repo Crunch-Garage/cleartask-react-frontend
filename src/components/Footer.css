@@ -1,0 +1,18 @@
+@import "../global/Imports.css";
+
+.footer{
+    font-family: var(--font-family);
+    border-top: 1px solid #f5f5f5;
+    padding: 15px 0;
+}
+
+.footer__container{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.footer__grid-item{
+    display: flex;
+}
+
