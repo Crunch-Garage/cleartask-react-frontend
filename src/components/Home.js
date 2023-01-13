@@ -10,7 +10,6 @@ import instagram from '../assets/instagram.png';
 import github from '../assets/github.png';
 import snapchat from '../assets/snapchat.png';
 import "./Home.css";
-import Header from "./Header"
 
 
 const GetStartedInput = ()=>{
@@ -73,7 +72,6 @@ class Home extends React.Component {
     render(){
         return(
             <>
-            <Header/>
             <div className="homePage">
                 <div className="contBox">
                     <Container>
