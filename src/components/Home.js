@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import getApp from '../assets/getApp.png';
 import trusPilot from '../assets/truspilot.png';
 import capterra from '../assets/capterra.png';
+import hr from '../assets/hr.png';
 import "./Home.css";
 import Header from "./Header"
 
@@ -80,7 +81,9 @@ class Home extends React.Component {
                                 <ReviewOverview/>
                             </Grid>
                             <Grid item xs>
-                                
+                                <div className="heroGraphic">
+                                    <img src={hr} alt="dashboard"/>
+                                </div>
                             </Grid>
                         </Grid>
                     </Container>
