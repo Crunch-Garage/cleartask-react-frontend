@@ -8,6 +8,7 @@
     position: fixed;
     border-bottom: 1px solid #f7f7f7;
     background-color: #fff;
+    z-index: 1;
 }
 
 .full-menu{
