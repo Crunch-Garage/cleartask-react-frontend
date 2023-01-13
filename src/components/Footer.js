@@ -18,13 +18,13 @@ const Footer = ()=>{
                     </Grid>
                     <Grid container xs="auto" spacing={1} className="footer__grid">
                         <Grid item xs="auto" className="footer__grid-item">
-                            <iconify-icon icon="ic:baseline-facebook"  style={{"font-size": "30px"}}></iconify-icon>
+                            <a href="#"><iconify-icon icon="ic:baseline-facebook"  style={{"font-size": "30px"}}></iconify-icon></a>
                         </Grid>
                         <Grid item xs="auto" className="footer__grid-item">
-                            <iconify-icon icon="ri:instagram-fill"  style={{"font-size": "30px"}}></iconify-icon>
+                            <a href="#"><iconify-icon icon="ri:instagram-fill"  style={{"font-size": "30px"}}></iconify-icon></a>
                         </Grid>
                         <Grid item xs="auto" className="footer__grid-item">
-                            <iconify-icon icon="mdi:twitter"  style={{"font-size": "30px"}}></iconify-icon>
+                            <a href="#"><iconify-icon icon="mdi:twitter"  style={{"font-size": "30px"}}></iconify-icon></a>
                         </Grid>
                     </Grid>
             </Container>
