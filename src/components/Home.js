@@ -94,7 +94,7 @@ class Home extends React.Component {
                 <section className="partners">
                     <Container className="partners__container">
                         <h2>Trusted by global companies</h2>
-                        <Grid container spacing={5} className="partners__companies">
+                        <Grid container className="partners__companies">
                             <Grid item xs="auto" className="partners__company">
                                 <img src={airbnb} alt="airbnb"/>
                             </Grid>
