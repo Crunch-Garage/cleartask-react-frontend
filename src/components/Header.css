@@ -235,3 +235,19 @@
     text-align: start;
     color:var(--secondary-text-color);
 }
+
+@media screen and (max-width:1240px){
+    .primary-menu__list-wrapper {
+        display: none;
+    }
+}
+
+@media screen and (max-width:600px){
+    .primary-menu .primary-menu__logo img{
+        height:30px;
+        width:auto;
+    }
+    .secondary-menu .unauthed :not(:last-child){
+        display: none !important;
+    }
+}
