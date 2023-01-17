@@ -14,10 +14,6 @@ const SignUpNavbar = ()=>{
                 <Link to="/">
                     <img src={logo} alt=""/>
                 </Link>
-                <div className="right-menu">
-                    <span>Already have an account?</span>
-                    <Link to="/auth/login"><button type="button">Login!</button></Link>
-                </div>
             </div>
         </nav>
     )
@@ -99,41 +95,45 @@ class Signup extends React.Component {
 
     render(){
         return(
-            <Container className="formContainer">
-                <Grid container spacing={3} className="formContainerGrid">
-                    <Grid item xs>
-                        <SignUpNavbar/>
-                        <div className='authWrapper'>
-                            <div className='authHead'>
-                                <h2>Ready to get more done</h2>
-                                <p>Create an account to begin</p>
-                            </div>
-                            <form onSubmit={this.registerUser}>
-                            <span className={this.state.authErrors ? 'formErrors AuthError' : ''}>{this.state.authErrors}</span>
-                                <input id='email' className={this.state.emailErrors ? 'fieldError' : ''} name='email' placeholder='jane.doe@email.com' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
-                                <span className='formErrors'>{this.state.emailErrors}</span>
-                                <div className="fullNames">
-                                    <div className="fields">
-                                        <input id='firstname' className={this.state.fullNameErrors ? 'fieldError' : ''} name='firstname' placeholder='Firstname' onChange={(e)=> this.handleChange({firstname:e.target.value})} required></input>
-                                        <span style={{width:'10px'}}></span>
-                                        <input id='lastname' className={this.state.fullNameErrors ? 'fieldError' : ''} name='lastname' placeholder='Lastname' onChange={(e)=> this.handleChange({lastname:e.target.value})} required></input>
+            <Container className="auth">
+                <Grid container className="auth__grid">
+                    <Grid item xs className="auth__grid-item">
+                        <div className='auth__wrapper'>
+                            <SignUpNavbar/>
+                            <div className='auth__wrapper-inner'>
+                            
+                                <div className='auth__wrapper-head'>
+                                    <h2>Ready to get more done</h2>
+                                    <p>Create an account to begin</p>
+                                </div>
+                                <form onSubmit={this.registerUser} className="form">
+                                <span className={this.state.authErrors ? 'form__errors form__auth-error' : ''}>{this.state.authErrors}</span>
+                                    <input id='email' className={this.state.emailErrors ? 'form__field-error' : ''} name='email' placeholder='jane.doe@email.com' onChange={(e)=> this.handleChange({email:e.target.value})} required></input>
+                                    <span className='form__errors'>{this.state.emailErrors}</span>
+                                    <div className="full-names">
+                                        <div className="fields">
+                                            <input id='firstname' className={this.state.fullNameErrors ? 'form__field-error' : ''} name='firstname' placeholder='Firstname' onChange={(e)=> this.handleChange({firstname:e.target.value})} required></input>
+                                            <span style={{width:'10px'}}></span>
+                                            <input id='lastname' className={this.state.fullNameErrors ? 'form__field-error' : ''} name='lastname' placeholder='Lastname' onChange={(e)=> this.handleChange({lastname:e.target.value})} required></input>
+                                        </div>
+                                        <span className='form__errors'>{this.state.fullNameErrors}</span>
                                     </div>
-                                    <span className='formErrors'>{this.state.fullNameErrors}</span>
+                                    <div className='password'>
+                                        <input id='password1' type='password' className={this.state.passwordErrors ? 'form__field-error' : ''} name='password1' placeholder='Enter your password' onChange={(e)=> this.handleChange({password1:e.target.value})} required></input>
+                                        <input id='password2' type='password' className={this.state.passwordErrors ? 'form__field-error' : ''} name='password2' placeholder='Confirm your password' onChange={(e)=> this.handleChange({password2:e.target.value})} required></input>
+                                        <span className='form__errors'>{this.state.passwordErrors}</span>
+                                    </div>
+                                    <button type='submit'>Sign up</button>
+                                </form>
+                                <div className="auth__signup">
+                                    <span>Already have an account?</span>
+                                    <Link to="/auth/login"><button type="button">Login!</button></Link>
                                 </div>
-                                <div className='passwordField'>
-                                    <input id='password1' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password1' placeholder='Enter your password' onChange={(e)=> this.handleChange({password1:e.target.value})} required></input>
-                                    <input id='password2' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password2' placeholder='Confirm your password' onChange={(e)=> this.handleChange({password2:e.target.value})} required></input>
-                                    <span className='formErrors'>{this.state.passwordErrors}</span>
-                                </div>
-                                <button type='submit'>Sign up</button>
-                            </form>
-                        </div>
-                        <div className="formFooter">
+                            </div>
+                            <div className="auth__footer">
                                 <span> &copy;Cleartask {new Date().getFullYear()}</span>
+                            </div>
                         </div>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <div className="slideView"/>
                     </Grid>
                 </Grid>
             </Container>

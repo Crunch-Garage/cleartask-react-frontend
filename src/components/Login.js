@@ -16,10 +16,6 @@ const LoginNavbar = ()=>{
                 <Link to="/">
                     <img src={logo} alt=""/>
                 </Link>
-                <div className="right-menu">
-                    <span>Don't have an account?</span>
-                    <Link to="/auth/signup"><button type="button">Sign up!</button></Link>
-                </div>
             </div>
         </nav>
     )
@@ -90,31 +86,35 @@ class Login extends React.Component {
     };
     render(){
         return(
-                <Container className="formContainer">
-                    <Grid container spacing={3} className="formContainerGrid">
-                        <Grid item xs>
-                            <LoginNavbar/>
-                            <div className='authWrapper'>
-                                <div className='authHead'>
-                                    <h2>Welcome back!</h2>
-                                    <p>Login to your account to continue.</p>
+                <Container className="auth">
+                    <Grid container className="auth__grid">
+                        <Grid item xs className="auth__grid-item">
+                            <div className='auth__wrapper'>
+                                <LoginNavbar/> 
+                                <div className='auth__wrapper-inner'>
+                                    <div className='auth__wrapper-head'>
+                                        <h2>Welcome back!</h2>
+                                        <p>Login to your account to continue.</p>
+                                    </div>
+                                    <form onSubmit={this.loginUser}>
+                                        <span className={this.state.authErrors ? 'form__errors form__auth-error' : ''}>{this.state.authErrors}</span>
+                                        <input id='identifier' className={this.state.idErrors ? 'form__field-error' : ''} name='identifier' placeholder='Username,Email or Phone number' onChange={(e)=> this.handleChange({identifier:e.target.value})} required></input>
+                                        <span className='form__errors'>{this.state.idErrors}</span>
+                                        <input id='password' type='password' className={this.state.passwordErrors ? 'form__field-error' : ''} name='password' placeholder='Enter your password' autoComplete='on' onChange={(e)=> this.handleChange({password:e.target.value})} required></input>
+                                        <span className='form__errors'>{this.state.passwordErrors}</span>
+                                        <button type='submit'>Login</button>
+                                        
+                                    </form>
+                                    <div className="auth__signup">
+                                        <span>Don't have an account?</span>
+                                        <Link to="/auth/signup"><button type="button">Sign up!</button></Link>
+                                    </div>
                                 </div>
-                                <form onSubmit={this.loginUser}>
-                                    <span className={this.state.authErrors ? 'formErrors AuthError' : ''}>{this.state.authErrors}</span>
-                                    <input id='identifier' className={this.state.idErrors ? 'fieldError' : ''} name='identifier' placeholder='Username,Email or Phone number' onChange={(e)=> this.handleChange({identifier:e.target.value})} required></input>
-                                    <span className='formErrors'>{this.state.idErrors}</span>
-                                    <input id='password' type='password' className={this.state.passwordErrors ? 'fieldError' : ''} name='password' placeholder='Enter your password' autoComplete='on' onChange={(e)=> this.handleChange({password:e.target.value})} required></input>
-                                    <span className='formErrors'>{this.state.passwordErrors}</span>
-                                    <button type='submit'>Login</button>
-                                    
-                                </form>
+                                <div className="auth__footer">
+                                    <span> &copy;Cleartask {new Date().getFullYear()}</span>
+                                </div>
                             </div>
-                            <div className="formFooter">
-                                <span> &copy;Cleartask {new Date().getFullYear()}</span>
-                            </div>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <div className="slideView"/>
+                            
                         </Grid>
                     </Grid>
                 </Container>
