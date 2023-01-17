@@ -15,6 +15,7 @@
 .footer__container{
     max-width: 1080px !important;
     display: flex !important;
+    flex-wrap: wrap-reverse;
     align-items: center !important;
     justify-content: space-between !important;
 }
