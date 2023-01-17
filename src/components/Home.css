@@ -192,8 +192,13 @@
 
 .partners__companies{
     display: flex !important;
+    flex-wrap:wrap !important;
     justify-content: center !important;
     align-items: center;
+}
+
+.partners__companies .partners__company{
+    margin:15px !important;
 }
 
 .partners__company img{
