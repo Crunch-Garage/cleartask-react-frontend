@@ -74,15 +74,15 @@ class Home extends React.Component {
             <main className="main">
                 <div className="hero">
                     <section className="hero__section">
-                        <Container className="hero__container">
-                            <Grid container spacing={3} className="hero__grid">
-                                <Grid item xs={5} className="hero__grid--first">
+                        <Container className="mui__container hero__container">
+                            <Grid container className="mui__grid hero__grid">
+                                <Grid item xs={12} sm={6} md={5} lg={5} className="mui__grid-item hero__grid--item hero__grid--first">
                                     <h2>All your projects & tasks in one place!</h2>
                                     <p>Get more productive. Get clear!</p>
                                     <GetStartedInput/>
                                     <ReviewOverview/>
                                 </Grid>
-                                <Grid item xs={7} className="hero__grid--last">
+                                <Grid item xs={12} sm={6} md={7} lg={7} className=" mui__grid-item hero__grid--item hero__grid--last">
                                     <div className="hero__grid-graphic">
                                         <img src={hr} alt="dashboard"/>
                                     </div>
