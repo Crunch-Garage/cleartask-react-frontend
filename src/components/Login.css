@@ -9,28 +9,13 @@
 .wrapper{
     max-width:1080px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 25px;
 }
 
 .auth-nav img{
-    height:25px;
+    height:35px;
     width:auto;
-}
-
-.right-menu span{
-    font-size: 1rem;
-    margin-right: 10px;
-}
-
-.right-menu button{
-    background-color: var(--primary-color);
-    padding:5px 15px;
-    border-radius: 25px;
-    color:#ffffff;
-}
-
-.right-menu button:hover{
-    background-color: var(--secondary-button-color);
 }
