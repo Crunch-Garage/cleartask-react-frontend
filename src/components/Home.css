@@ -91,6 +91,11 @@
     align-items: center;
 }
 
+.rating__stars{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .hero__grid--first .rating .rating__stars--box{
     display: flex;
     align-items: center;
@@ -124,8 +129,50 @@
 
 .hero__grid-graphic img{
     position: relative;
-    width: 500px;
-    top:-25px;
+    object-fit: cover;
+    height:100%;
+}
+
+/* Laptop screens and up */
+@media screen and (min-width:1240px){
+    .hero__grid-graphic{
+        padding-left: 0 ;
+    }
+
+    .hero__grid-graphic img{
+        width: 500px;
+        height:500px;
+        top:-25px;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width:600px){
+    .hero__grid-graphic{
+        padding-left: 20px ;
+    }
+
+    .hero__grid-graphic img{
+        width:360px;
+        height:360px;
+        top:0;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width:599px){
+    .hero__grid{
+        width:100%;
+    }
+    
+    .hero__grid-graphic{
+        margin-top: 25px;
+    }
+
+    .hero__grid-graphic img{
+        width:100%;
+        height:100%;
+    }
 }
 
 .partners{
