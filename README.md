@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Clear task react App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project has been archived and will no longer receive updates. The repository has been \
+merged with [Cleartask Django Backend](https://github.com/mutuaMkennedy/cleartask). You \
+can visit the Django repository to follow on the project.
 
 ## Available Scripts
 
@@ -68,4 +70,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# cleartask-react-frontend
