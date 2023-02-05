@@ -1,4 +1,4 @@
-# Clear task react App
+# Cleartask React App
 
 This project has been archived and will no longer receive updates. The repository has been \
 merged with [Cleartask Django Backend](https://github.com/mutuaMkennedy/cleartask). \
