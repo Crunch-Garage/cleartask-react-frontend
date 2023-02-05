@@ -251,3 +251,41 @@
         display: none !important;
     }
 }
+
+.mobile-menu__trigger{
+    display: none;
+}
+
+.mobile-menu__container{
+    position: fixed;
+    top:0;
+    right:0;
+    width:100vw;
+    height:100vh;
+    background-color: #fff;
+    padding-top:25px ;
+}
+
+.mobile-menu__top-bar{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.mobile-menu__top-bar img{
+    height: 25px;
+    padding: 0;
+}
+
+.mobile-menu__top-bar svg{
+    width: 32px;
+    height: 32px;
+}
+
+@media screen and (max-width:1240px){
+    .mobile-menu__trigger{
+        display: block;
+    }
+}
